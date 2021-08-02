@@ -1,0 +1,690 @@
+﻿ 
+New Run    
+User defined-keywords = Oracle , Python , VBA , C# , Java , Agile , Engineering
+User defined-keywords Count = 7
+QualifiedCount = 4
+Match pattern = \sOracle|\sPython|\sVBA|\sC#|\sJava|\sAgile|\sEngineering
+Start fetching CV index i = 0, Original CV file name = Adhi Gopalam - SM.docx
+matchList(0) = agile
+matchList(22) = oracle
+matchList(24) = java
+For file name : Adhi Gopalam - SM.docx ,  match count = 28 Unque match count = 3 , 
+ Unque match keyword = agile oracle java Email =   - Phone =   -
+Start fetching CV index i = 1, Original CV file name = Amar Sr BSA.docx
+matchList(0) = agile
+matchList(1) = java
+matchList(3) = oracle
+For file name : Amar Sr BSA.docx ,  match count = 14 Unque match count = 3 , 
+ Unque match keyword = agile java oracle Email =   - Phone =   -
+Start fetching CV index i = 2, Original CV file name = AnilAgarwal.docx
+matchList(0) = agile
+matchList(1) = oracle
+matchList(2) = engineering
+For file name : AnilAgarwal.docx ,  match count = 21 Unque match count = 3 , 
+ Unque match keyword = agile oracle engineering Email =   - Phone =   -
+Start fetching CV index i = 3, Original CV file name = B Suresh Kumar_Project Manager_1.docx
+matchList(0) = agile
+matchList(4) = java
+matchList(8) = oracle
+matchList(21) = c#
+matchList(25) = python
+WARNING :  B Suresh Kumar_Project Manager_1.docx has no email Id detected in it ! 
+WARNING :  B Suresh Kumar_Project Manager_1.docx has no phone nbr detected in it ! 
+For file name : B Suresh Kumar_Project Manager_1.docx ,  match count = 39 Unque match count = 5 , 
+ Unque match keyword = agile java oracle c# python Email = No email Id detected Phone = No phone nbr detected
+Start fetching CV index i = 4, Original CV file name = BA with INV.docx
+matchList(0) = agile
+matchList(3) = java
+matchList(4) = oracle
+For file name : BA with INV.docx ,  match count = 12 Unque match count = 3 , 
+ Unque match keyword = agile java oracle Email =   - Phone =   -
+Start fetching CV index i = 5, Original CV file name = Deepika Chintalapati.docx
+matchList(0) = oracle
+matchList(1) = agile
+matchList(16) = engineering
+For file name : Deepika Chintalapati.docx ,  match count = 17 Unque match count = 3 , 
+ Unque match keyword = oracle agile engineering Email =   - Phone =   -
+Start fetching CV index i = 6, Original CV file name = Deepika DC.docx
+matchList(0) = oracle
+matchList(1) = agile
+For file name : Deepika DC.docx ,  match count = 30 Unque match count = 2 , 
+ Unque match keyword = oracle agile Email =   - Phone =   -
+Start fetching CV index i = 7, Original CV file name = indrakaran soma.docx
+matchList(0) = java
+matchList(1) = engineering
+matchList(2) = agile
+matchList(6) = oracle
+For file name : indrakaran soma.docx ,  match count = 65 Unque match count = 4 , 
+ Unque match keyword = java engineering agile oracle Email = Karan.javau@gmail.com Phone = 510-358-3595
+Start fetching CV index i = 8, Original CV file name = Jagan S Iyer PM.docx
+matchList(0) = oracle
+matchList(3) = agile
+For file name : Jagan S Iyer PM.docx ,  match count = 4 Unque match count = 2 , 
+ Unque match keyword = oracle agile Email =   - Phone =   -
+Start fetching CV index i = 9, Original CV file name = Jimi_Desai_PM.docx
+matchList(0) = agile
+matchList(2) = oracle
+matchList(4) = engineering
+For file name : Jimi_Desai_PM.docx ,  match count = 8 Unque match count = 3 , 
+ Unque match keyword = agile oracle engineering Email =   - Phone =   -
+Start fetching CV index i = 10, Original CV file name = Komala BSA Resume.docx
+matchList(0) = agile
+matchList(2) = oracle
+matchList(11) = java
+matchList(24) = engineering
+WARNING :  Komala BSA Resume.docx has no email Id detected in it ! 
+WARNING :  Komala BSA Resume.docx has no phone nbr detected in it ! 
+For file name : Komala BSA Resume.docx ,  match count = 25 Unque match count = 4 , 
+ Unque match keyword = agile oracle java engineering Email = No email Id detected Phone = No phone nbr detected
+Start fetching CV index i = 11, Original CV file name = Krishna_BSA.docx
+matchList(0) = agile
+matchList(3) = engineering
+matchList(5) = python
+matchList(6) = oracle
+matchList(7) = java
+WARNING :  Krishna_BSA.docx has no email Id detected in it ! 
+WARNING :  Krishna_BSA.docx has no phone nbr detected in it ! 
+For file name : Krishna_BSA.docx ,  match count = 11 Unque match count = 5 , 
+ Unque match keyword = agile engineering python oracle java Email = No email Id detected Phone = No phone nbr detected
+Start fetching CV index i = 12, Original CV file name = Manohar Reddy.docx
+matchList(0) = java
+matchList(3) = oracle
+matchList(8) = agile
+matchList(20) = python
+For file name : Manohar Reddy.docx ,  match count = 121 Unque match count = 4 , 
+ Unque match keyword = java oracle agile python Email = manohar.r7754@gmail.com Phone = (614) 285-5486
+Start fetching CV index i = 13, Original CV file name = Mohammad Resume.docx
+matchList(0) = java
+matchList(1) = oracle
+matchList(2) = agile
+matchList(4) = engineering
+matchList(9) = c#
+For file name : Mohammad Resume.docx ,  match count = 32 Unque match count = 5 , 
+ Unque match keyword = java oracle agile engineering c# Email = mfarhantramboo@gmail.com Phone = 1 718-877-4291
+Start fetching CV index i = 14, Original CV file name = mounika BA resume 7.docx
+matchList(0) = agile
+matchList(3) = java
+matchList(5) = oracle
+For file name : mounika BA resume 7.docx ,  match count = 11 Unque match count = 3 , 
+ Unque match keyword = agile java oracle Email =   - Phone =   -
+Start fetching CV index i = 15, Original CV file name = Nikhil.docx
+matchList(0) = engineering
+matchList(1) = java
+matchList(3) = oracle
+matchList(11) = agile
+matchList(19) = python
+For file name : Nikhil.docx ,  match count = 59 Unque match count = 5 , 
+ Unque match keyword = engineering java oracle agile python Email = nikhil.akula06@gmail.com Phone = 713 931 9034
+Start fetching CV index i = 16, Original CV file name = Praveen B.docx
+matchList(0) = oracle
+matchList(3) = engineering
+For file name : Praveen B.docx ,  match count = 11 Unque match count = 2 , 
+ Unque match keyword = oracle engineering Email =   - Phone =   -
+Start fetching CV index i = 17, Original CV file name = Priyanka Sr BSA Resume.docx
+matchList(0) = agile
+matchList(2) = oracle
+matchList(5) = python
+matchList(6) = java
+WARNING :  Priyanka Sr BSA Resume.docx has no email Id detected in it ! 
+For file name : Priyanka Sr BSA Resume.docx ,  match count = 11 Unque match count = 4 , 
+ Unque match keyword = agile oracle python java Email = No email Id detected Phone = 2017-Present
+Start fetching CV index i = 18, Original CV file name = Raja Santhosam_PM Scrum Master.DOCX
+matchList(0) = agile
+matchList(3) = engineering
+matchList(4) = oracle
+For file name : Raja Santhosam_PM Scrum Master.DOCX ,  match count = 17 Unque match count = 3 , 
+ Unque match keyword = agile engineering oracle Email =   - Phone =   -
+Start fetching CV index i = 19, Original CV file name = Rajendra-PMP-CSM.docx
+matchList(0) = agile
+matchList(1) = oracle
+matchList(2) = java
+For file name : Rajendra-PMP-CSM.docx ,  match count = 14 Unque match count = 3 , 
+ Unque match keyword = agile oracle java Email =   - Phone =   -
+Start fetching CV index i = 20, Original CV file name = Ranjan_Project Manager-Scrum Master.docx
+matchList(0) = engineering
+matchList(1) = agile
+matchList(2) = java
+matchList(3) = oracle
+WARNING :  Ranjan_Project Manager-Scrum Master.docx has no email Id detected in it ! 
+WARNING :  Ranjan_Project Manager-Scrum Master.docx has no phone nbr detected in it ! 
+For file name : Ranjan_Project Manager-Scrum Master.docx ,  match count = 6 Unque match count = 4 , 
+ Unque match keyword = engineering agile java oracle Email = No email Id detected Phone = No phone nbr detected
+Start fetching CV index i = 21, Original CV file name = RaviRaju_Resume.docx
+matchList(0) = agile
+matchList(1) = oracle
+matchList(5) = java
+matchList(10) = python
+For file name : RaviRaju_Resume.docx ,  match count = 14 Unque match count = 4 , 
+ Unque match keyword = agile oracle java python Email = gopal@infoservicesllc.com Phone = 734-259-2421
+Start fetching CV index i = 22, Original CV file name = Shaker Resume.docx
+matchList(0) = agile
+matchList(1) = java
+matchList(5) = oracle
+For file name : Shaker Resume.docx ,  match count = 12 Unque match count = 3 , 
+ Unque match keyword = agile java oracle Email =   - Phone =   -
+Start fetching CV index i = 23, Original CV file name = Siddhartha Gandroju.docx
+matchList(0) = java
+matchList(2) = engineering
+matchList(6) = agile
+matchList(21) = oracle
+matchList(48) = python
+For file name : Siddhartha Gandroju.docx ,  match count = 88 Unque match count = 5 , 
+ Unque match keyword = java engineering agile oracle python Email = siddhartha.g225@gmail.com Phone = (646) 494-6583
+Start fetching CV index i = 24, Original CV file name = Spoorthi Finance BSA Resume.docx
+matchList(0) = agile
+matchList(1) = engineering
+matchList(2) = java
+matchList(4) = oracle
+WARNING :  Spoorthi Finance BSA Resume.docx has no email Id detected in it ! 
+For file name : Spoorthi Finance BSA Resume.docx ,  match count = 9 Unque match count = 4 , 
+ Unque match keyword = agile engineering java oracle Email = No email Id detected Phone = 165 complia
+Start fetching CV index i = 25, Original CV file name = Tanmay_Dam_Resume_BA.docx
+matchList(0) = agile
+matchList(3) = oracle
+For file name : Tanmay_Dam_Resume_BA.docx ,  match count = 4 Unque match count = 2 , 
+ Unque match keyword = agile oracle Email =   - Phone =   -
+Start fetching CV index i = 26, Original CV file name = Tarun RESUME-BSAT.docx
+matchList(0) = agile
+matchList(2) = oracle
+For file name : Tarun RESUME-BSAT.docx ,  match count = 8 Unque match count = 2 , 
+ Unque match keyword = agile oracle Email =   - Phone =   -
+Start fetching CV index i = 27, Original CV file name = vema reddy.docx
+matchList(0) = java
+matchList(1) = agile
+matchList(9) = oracle
+matchList(21) = python
+For file name : vema reddy.docx ,  match count = 98 Unque match count = 4 , 
+ Unque match keyword = java agile oracle python Email = vemareddy993@gmail.com Phone = (865)375-0056
+Start fetching CV index i = 28, Original CV file name = Vivek.BSA.docx
+matchList(0) = agile
+matchList(1) = engineering
+matchList(4) = oracle
+matchList(6) = java
+WARNING :  Vivek.BSA.docx has no email Id detected in it ! 
+WARNING :  Vivek.BSA.docx has no phone nbr detected in it ! 
+For file name : Vivek.BSA.docx ,  match count = 30 Unque match count = 4 , 
+ Unque match keyword = agile engineering oracle java Email = No email Id detected Phone = No phone nbr detected
+Start fetching CV index i = 29, Original CV file name = Yohan BSA.docx
+matchList(0) = agile
+matchList(3) = oracle
+matchList(5) = engineering
+matchList(9) = java
+WARNING :  Yohan BSA.docx has no email Id detected in it ! 
+WARNING :  Yohan BSA.docx has no phone nbr detected in it ! 
+For file name : Yohan BSA.docx ,  match count = 19 Unque match count = 4 , 
+ Unque match keyword = agile oracle engineering java Email = No email Id detected Phone = No phone nbr detected
+Start fetching CV index i = 30, Original CV file name = abdullahqureshi3593_1912.pdf
+matchList(0) = engineering
+For file name : abdullahqureshi3593_1912.pdf ,  match count = 19 Unque match count = 1 , 
+ Unque match keyword = engineering Email =   - Phone =   -
+Start fetching CV index i = 31, Original CV file name = abdulraz555_584.pdf
+matchList(0) = engineering
+For file name : abdulraz555_584.pdf ,  match count = 2 Unque match count = 1 , 
+ Unque match keyword = engineering Email =   - Phone =   -
+Start fetching CV index i = 32, Original CV file name = abmishraji_59.pdf
+matchList(0) = engineering
+For file name : abmishraji_59.pdf ,  match count = 1 Unque match count = 1 , 
+ Unque match keyword = engineering Email =   - Phone =   -
+Start fetching CV index i = 33, Original CV file name = aghilak.k4_3067.pdf
+For file name : aghilak.k4_3067.pdf ,  match count = 0 Unque match count = 0 , 
+ Unque match keyword =  Email =   - Phone =   -
+Start fetching CV index i = 34, Original CV file name = akila.mca2009_2577.pdf
+matchList(0) = agile
+matchList(1) = c#
+matchList(2) = java
+For file name : akila.mca2009_2577.pdf ,  match count = 9 Unque match count = 3 , 
+ Unque match keyword = agile c# java Email =   - Phone =   -
+Start fetching CV index i = 35, Original CV file name = ali_manzar08_2437.pdf
+For file name : ali_manzar08_2437.pdf ,  match count = 0 Unque match count = 0 , 
+ Unque match keyword =  Email =   - Phone =   -
+Start fetching CV index i = 36, Original CV file name = anoopmr030_674.pdf
+matchList(0) = engineering
+For file name : anoopmr030_674.pdf ,  match count = 5 Unque match count = 1 , 
+ Unque match keyword = engineering Email =   - Phone =   -
+Start fetching CV index i = 37, Original CV file name = Imtiyaznd_1472.pdf
+For file name : Imtiyaznd_1472.pdf ,  match count = 0 Unque match count = 0 , 
+ Unque match keyword =  Email =   - Phone =   -
+Start fetching CV index i = 38, Original CV file name = jadhavnaresh11_339.pdf
+matchList(0) = java
+For file name : jadhavnaresh11_339.pdf ,  match count = 5 Unque match count = 1 , 
+ Unque match keyword = java Email =   - Phone =   -
+Start fetching CV index i = 39, Original CV file name = junaidcps_500.pdf
+matchList(0) = engineering
+For file name : junaidcps_500.pdf ,  match count = 5 Unque match count = 1 , 
+ Unque match keyword = engineering Email =   - Phone =   -
+Start fetching CV index i = 40, Original CV file name = Kamwendait_2668.pdf
+matchList(0) = python
+For file name : Kamwendait_2668.pdf ,  match count = 1 Unque match count = 1 , 
+ Unque match keyword = python Email =   - Phone =   -
+Start fetching CV index i = 41, Original CV file name = lovepreet.sroyea_676.pdf
+matchList(0) = engineering
+For file name : lovepreet.sroyea_676.pdf ,  match count = 2 Unque match count = 1 , 
+ Unque match keyword = engineering Email =   - Phone =   -
+Start fetching CV index i = 42, Original CV file name = m.ramya19_2603.pdf
+matchList(0) = engineering
+matchList(1) = c#
+matchList(2) = java
+matchList(3) = python
+matchList(4) = oracle
+For file name : m.ramya19_2603.pdf ,  match count = 7 Unque match count = 5 , 
+ Unque match keyword = engineering c# java python oracle Email = m.ramya19@yahoo.in Phone = 9710100160
+Start fetching CV index i = 43, Original CV file name = Mohanlobra_510.pdf
+matchList(0) = engineering
+For file name : Mohanlobra_510.pdf ,  match count = 2 Unque match count = 1 , 
+ Unque match keyword = engineering Email =   - Phone =   -
+Start fetching CV index i = 44, Original CV file name = morahman92_774.pdf
+matchList(0) = engineering
+For file name : morahman92_774.pdf ,  match count = 4 Unque match count = 1 , 
+ Unque match keyword = engineering Email =   - Phone =   -
+Start fetching CV index i = 45, Original CV file name = mSa.deshpandenavin_2907.pdf
+matchList(0) = python
+For file name : mSa.deshpandenavin_2907.pdf ,  match count = 1 Unque match count = 1 , 
+ Unque match keyword = python Email =   - Phone =   -
+Start fetching CV index i = 46, Original CV file name = Noorsip_2910.pdf
+For file name : Noorsip_2910.pdf ,  match count = 0 Unque match count = 0 , 
+ Unque match keyword =  Email =   - Phone =   -
+Start fetching CV index i = 47, Original CV file name = olivier.galland_2803.pdf
+For file name : olivier.galland_2803.pdf ,  match count = 0 Unque match count = 0 , 
+ Unque match keyword =  Email =   - Phone =   -
+Start fetching CV index i = 48, Original CV file name = palaksparekh06_1690.pdf
+matchList(0) = engineering
+matchList(1) = oracle
+matchList(2) = java
+For file name : palaksparekh06_1690.pdf ,  match count = 4 Unque match count = 3 , 
+ Unque match keyword = engineering oracle java Email =   - Phone =   -
+Start fetching CV index i = 49, Original CV file name = ra.jaleco_531.pdf
+For file name : ra.jaleco_531.pdf ,  match count = 0 Unque match count = 0 , 
+ Unque match keyword =  Email =   - Phone =   -
+Start fetching CV index i = 50, Original CV file name = rabiasantki54_1558.pdf
+matchList(0) = engineering
+For file name : rabiasantki54_1558.pdf ,  match count = 3 Unque match count = 1 , 
+ Unque match keyword = engineering Email =   - Phone =   -
+Start fetching CV index i = 51, Original CV file name = rama.mech_900.pdf
+matchList(0) = engineering
+For file name : rama.mech_900.pdf ,  match count = 1 Unque match count = 1 , 
+ Unque match keyword = engineering Email =   - Phone =   -
+Start fetching CV index i = 52, Original CV file name = ravisharma12oct_2214.pdf
+matchList(0) = engineering
+For file name : ravisharma12oct_2214.pdf ,  match count = 1 Unque match count = 1 , 
+ Unque match keyword = engineering Email =   - Phone =   -
+Start fetching CV index i = 53, Original CV file name = sahabudeen78_2063.pdf
+matchList(0) = oracle
+matchList(1) = java
+For file name : sahabudeen78_2063.pdf ,  match count = 5 Unque match count = 2 , 
+ Unque match keyword = oracle java Email =   - Phone =   -
+Start fetching CV index i = 54, Original CV file name = salmani.fariyad_1211.pdf
+matchList(0) = engineering
+For file name : salmani.fariyad_1211.pdf ,  match count = 1 Unque match count = 1 , 
+ Unque match keyword = engineering Email =   - Phone =   -
+Start fetching CV index i = 55, Original CV file name = sbnmech_2420.pdf
+matchList(0) = engineering
+For file name : sbnmech_2420.pdf ,  match count = 1 Unque match count = 1 , 
+ Unque match keyword = engineering Email =   - Phone =   -
+Start fetching CV index i = 56, Original CV file name = shahwazakhter_1992.pdf
+matchList(0) = c#
+matchList(2) = engineering
+For file name : shahwazakhter_1992.pdf ,  match count = 3 Unque match count = 2 , 
+ Unque match keyword = c# engineering Email =   - Phone =   -
+Start fetching CV index i = 57, Original CV file name = shanbagam_2486.pdf
+matchList(0) = java
+matchList(1) = c#
+matchList(2) = python
+matchList(3) = oracle
+WARNING :  shanbagam_2486.pdf has no phone nbr detected in it ! 
+For file name : shanbagam_2486.pdf ,  match count = 5 Unque match count = 4 , 
+ Unque match keyword = java c# python oracle Email = shanbagam@gmail.com Phone = No phone nbr detected
+Start fetching CV index i = 58, Original CV file name = theglobeug_2286.pdf
+matchList(0) = engineering
+For file name : theglobeug_2286.pdf ,  match count = 4 Unque match count = 1 , 
+ Unque match keyword = engineering Email =   - Phone =   -
+Start fetching CV index i = 59, Original CV file name = vpsreeraj_1640.pdf
+matchList(0) = oracle
+matchList(1) = c#
+matchList(2) = java
+For file name : vpsreeraj_1640.pdf ,  match count = 3 Unque match count = 3 , 
+ Unque match keyword = oracle c# java Email =   - Phone =   -
+ 
+New Run    
+User defined-keywords = Oracle , Python , VBA , C# , Java , Agile , Engineering
+User defined-keywords Count = 7
+QualifiedCount = 4
+Match pattern = \sOracle|\sPython|\sVBA|\sC#|\sJava|\sAgile|\sEngineering
+Start fetching CV index i = 1, Original CV file name = Adhi Gopalam - SM.docx
+matchList(0) = agile
+matchList(22) = oracle
+matchList(24) = java
+For file name : Adhi Gopalam - SM.docx ,  match count = 28 Unque match count = 3 , 
+ Unque match keyword = agile oracle java Email =  Phone = 
+Start fetching CV index i = 2, Original CV file name = Amar Sr BSA.docx
+matchList(0) = agile
+matchList(1) = java
+matchList(3) = oracle
+For file name : Amar Sr BSA.docx ,  match count = 14 Unque match count = 3 , 
+ Unque match keyword = agile java oracle Email =  Phone = 
+Start fetching CV index i = 3, Original CV file name = AnilAgarwal.docx
+matchList(0) = agile
+matchList(1) = oracle
+matchList(2) = engineering
+For file name : AnilAgarwal.docx ,  match count = 21 Unque match count = 3 , 
+ Unque match keyword = agile oracle engineering Email =  Phone = 
+Start fetching CV index i = 4, Original CV file name = B Suresh Kumar_Project Manager_1.docx
+matchList(0) = agile
+matchList(4) = java
+matchList(8) = oracle
+matchList(21) = c#
+matchList(25) = python
+WARNING : stremailmatchOut for B Suresh Kumar_Project Manager_1.docx = No email Id detected No email Id found in this CV 
+WARNING : strphonematchOut for B Suresh Kumar_Project Manager_1.docx = No phone nbr detected No phone nbr found in this CV 
+For file name : B Suresh Kumar_Project Manager_1.docx ,  match count = 39 Unque match count = 5 , 
+ Unque match keyword = agile java oracle c# python Email = No email Id detected Phone = No phone nbr detected
+Start fetching CV index i = 5, Original CV file name = BA with INV.docx
+matchList(0) = agile
+matchList(3) = java
+matchList(4) = oracle
+For file name : BA with INV.docx ,  match count = 12 Unque match count = 3 , 
+ Unque match keyword = agile java oracle Email =  Phone = 
+Start fetching CV index i = 6, Original CV file name = Deepika Chintalapati.docx
+matchList(0) = oracle
+matchList(1) = agile
+matchList(16) = engineering
+For file name : Deepika Chintalapati.docx ,  match count = 17 Unque match count = 3 , 
+ Unque match keyword = oracle agile engineering Email =  Phone = 
+Start fetching CV index i = 7, Original CV file name = Deepika DC.docx
+matchList(0) = oracle
+matchList(1) = agile
+For file name : Deepika DC.docx ,  match count = 30 Unque match count = 2 , 
+ Unque match keyword = oracle agile Email =  Phone = 
+Start fetching CV index i = 8, Original CV file name = indrakaran soma.docx
+matchList(0) = java
+matchList(1) = engineering
+matchList(2) = agile
+matchList(6) = oracle
+For file name : indrakaran soma.docx ,  match count = 65 Unque match count = 4 , 
+ Unque match keyword = java engineering agile oracle Email = Karan.javau@gmail.com Phone = 510-358-3595
+Start fetching CV index i = 9, Original CV file name = Jagan S Iyer PM.docx
+matchList(0) = oracle
+matchList(3) = agile
+For file name : Jagan S Iyer PM.docx ,  match count = 4 Unque match count = 2 , 
+ Unque match keyword = oracle agile Email =  Phone = 
+Start fetching CV index i = 10, Original CV file name = Jimi_Desai_PM.docx
+matchList(0) = agile
+matchList(2) = oracle
+matchList(4) = engineering
+For file name : Jimi_Desai_PM.docx ,  match count = 8 Unque match count = 3 , 
+ Unque match keyword = agile oracle engineering Email =  Phone = 
+Start fetching CV index i = 11, Original CV file name = Komala BSA Resume.docx
+matchList(0) = agile
+matchList(2) = oracle
+matchList(11) = java
+matchList(24) = engineering
+WARNING : stremailmatchOut for Komala BSA Resume.docx = No email Id detected No email Id found in this CV 
+WARNING : strphonematchOut for Komala BSA Resume.docx = No phone nbr detected No phone nbr found in this CV 
+For file name : Komala BSA Resume.docx ,  match count = 25 Unque match count = 4 , 
+ Unque match keyword = agile oracle java engineering Email = No email Id detected Phone = No phone nbr detected
+Start fetching CV index i = 12, Original CV file name = Krishna_BSA.docx
+matchList(0) = agile
+matchList(3) = engineering
+matchList(5) = python
+matchList(6) = oracle
+matchList(7) = java
+WARNING : stremailmatchOut for Krishna_BSA.docx = No email Id detected No email Id found in this CV 
+WARNING : strphonematchOut for Krishna_BSA.docx = No phone nbr detected No phone nbr found in this CV 
+For file name : Krishna_BSA.docx ,  match count = 11 Unque match count = 5 , 
+ Unque match keyword = agile engineering python oracle java Email = No email Id detected Phone = No phone nbr detected
+Start fetching CV index i = 13, Original CV file name = Manohar Reddy.docx
+matchList(0) = java
+matchList(3) = oracle
+matchList(8) = agile
+matchList(20) = python
+For file name : Manohar Reddy.docx ,  match count = 121 Unque match count = 4 , 
+ Unque match keyword = java oracle agile python Email = manohar.r7754@gmail.com Phone = (614) 285-5486
+Start fetching CV index i = 14, Original CV file name = Mohammad Resume.docx
+matchList(0) = java
+matchList(1) = oracle
+matchList(2) = agile
+matchList(4) = engineering
+matchList(9) = c#
+For file name : Mohammad Resume.docx ,  match count = 32 Unque match count = 5 , 
+ Unque match keyword = java oracle agile engineering c# Email = mfarhantramboo@gmail.com Phone = 1 718-877-4291
+Start fetching CV index i = 15, Original CV file name = mounika BA resume 7.docx
+matchList(0) = agile
+matchList(3) = java
+matchList(5) = oracle
+For file name : mounika BA resume 7.docx ,  match count = 11 Unque match count = 3 , 
+ Unque match keyword = agile java oracle Email =  Phone = 
+Start fetching CV index i = 16, Original CV file name = Nikhil.docx
+matchList(0) = engineering
+matchList(1) = java
+matchList(3) = oracle
+matchList(11) = agile
+matchList(19) = python
+For file name : Nikhil.docx ,  match count = 59 Unque match count = 5 , 
+ Unque match keyword = engineering java oracle agile python Email = nikhil.akula06@gmail.com Phone = 713 931 9034
+Start fetching CV index i = 17, Original CV file name = Praveen B.docx
+matchList(0) = oracle
+matchList(3) = engineering
+For file name : Praveen B.docx ,  match count = 11 Unque match count = 2 , 
+ Unque match keyword = oracle engineering Email =  Phone = 
+Start fetching CV index i = 18, Original CV file name = Priyanka Sr BSA Resume.docx
+matchList(0) = agile
+matchList(2) = oracle
+matchList(5) = python
+matchList(6) = java
+WARNING : stremailmatchOut for Priyanka Sr BSA Resume.docx = No email Id detected No email Id found in this CV 
+For file name : Priyanka Sr BSA Resume.docx ,  match count = 11 Unque match count = 4 , 
+ Unque match keyword = agile oracle python java Email = No email Id detected Phone = 2017-Present
+Start fetching CV index i = 19, Original CV file name = Raja Santhosam_PM Scrum Master.DOCX
+matchList(0) = agile
+matchList(3) = engineering
+matchList(4) = oracle
+For file name : Raja Santhosam_PM Scrum Master.DOCX ,  match count = 17 Unque match count = 3 , 
+ Unque match keyword = agile engineering oracle Email =  Phone = 
+Start fetching CV index i = 20, Original CV file name = Rajendra-PMP-CSM.docx
+matchList(0) = agile
+matchList(1) = oracle
+matchList(2) = java
+For file name : Rajendra-PMP-CSM.docx ,  match count = 14 Unque match count = 3 , 
+ Unque match keyword = agile oracle java Email =  Phone = 
+Start fetching CV index i = 21, Original CV file name = Ranjan_Project Manager-Scrum Master.docx
+matchList(0) = engineering
+matchList(1) = agile
+matchList(2) = java
+matchList(3) = oracle
+WARNING : stremailmatchOut for Ranjan_Project Manager-Scrum Master.docx = No email Id detected No email Id found in this CV 
+WARNING : strphonematchOut for Ranjan_Project Manager-Scrum Master.docx = No phone nbr detected No phone nbr found in this CV 
+For file name : Ranjan_Project Manager-Scrum Master.docx ,  match count = 6 Unque match count = 4 , 
+ Unque match keyword = engineering agile java oracle Email = No email Id detected Phone = No phone nbr detected
+Start fetching CV index i = 22, Original CV file name = RaviRaju_Resume.docx
+matchList(0) = agile
+matchList(1) = oracle
+matchList(5) = java
+matchList(10) = python
+For file name : RaviRaju_Resume.docx ,  match count = 14 Unque match count = 4 , 
+ Unque match keyword = agile oracle java python Email = gopal@infoservicesllc.com Phone = 734-259-2421
+Start fetching CV index i = 23, Original CV file name = Shaker Resume.docx
+matchList(0) = agile
+matchList(1) = java
+matchList(5) = oracle
+For file name : Shaker Resume.docx ,  match count = 12 Unque match count = 3 , 
+ Unque match keyword = agile java oracle Email =  Phone = 
+Start fetching CV index i = 24, Original CV file name = Siddhartha Gandroju.docx
+matchList(0) = java
+matchList(2) = engineering
+matchList(6) = agile
+matchList(21) = oracle
+matchList(48) = python
+For file name : Siddhartha Gandroju.docx ,  match count = 88 Unque match count = 5 , 
+ Unque match keyword = java engineering agile oracle python Email = siddhartha.g225@gmail.com Phone = (646) 494-6583
+Start fetching CV index i = 25, Original CV file name = Spoorthi Finance BSA Resume.docx
+matchList(0) = agile
+matchList(1) = engineering
+matchList(2) = java
+matchList(4) = oracle
+WARNING : stremailmatchOut for Spoorthi Finance BSA Resume.docx = No email Id detected No email Id found in this CV 
+For file name : Spoorthi Finance BSA Resume.docx ,  match count = 9 Unque match count = 4 , 
+ Unque match keyword = agile engineering java oracle Email = No email Id detected Phone = 165 complia
+Start fetching CV index i = 26, Original CV file name = Tanmay_Dam_Resume_BA.docx
+matchList(0) = agile
+matchList(3) = oracle
+For file name : Tanmay_Dam_Resume_BA.docx ,  match count = 4 Unque match count = 2 , 
+ Unque match keyword = agile oracle Email =  Phone = 
+Start fetching CV index i = 27, Original CV file name = Tarun RESUME-BSAT.docx
+matchList(0) = agile
+matchList(2) = oracle
+For file name : Tarun RESUME-BSAT.docx ,  match count = 8 Unque match count = 2 , 
+ Unque match keyword = agile oracle Email =  Phone = 
+Start fetching CV index i = 28, Original CV file name = vema reddy.docx
+matchList(0) = java
+matchList(1) = agile
+matchList(9) = oracle
+matchList(21) = python
+For file name : vema reddy.docx ,  match count = 98 Unque match count = 4 , 
+ Unque match keyword = java agile oracle python Email = vemareddy993@gmail.com Phone = (865)375-0056
+Start fetching CV index i = 29, Original CV file name = Vivek.BSA.docx
+matchList(0) = agile
+matchList(1) = engineering
+matchList(4) = oracle
+matchList(6) = java
+WARNING : stremailmatchOut for Vivek.BSA.docx = No email Id detected No email Id found in this CV 
+WARNING : strphonematchOut for Vivek.BSA.docx = No phone nbr detected No phone nbr found in this CV 
+For file name : Vivek.BSA.docx ,  match count = 30 Unque match count = 4 , 
+ Unque match keyword = agile engineering oracle java Email = No email Id detected Phone = No phone nbr detected
+Start fetching CV index i = 30, Original CV file name = Yohan BSA.docx
+matchList(0) = agile
+matchList(3) = oracle
+matchList(5) = engineering
+matchList(9) = java
+WARNING : stremailmatchOut for Yohan BSA.docx = No email Id detected No email Id found in this CV 
+WARNING : strphonematchOut for Yohan BSA.docx = No phone nbr detected No phone nbr found in this CV 
+For file name : Yohan BSA.docx ,  match count = 19 Unque match count = 4 , 
+ Unque match keyword = agile oracle engineering java Email = No email Id detected Phone = No phone nbr detected
+Start fetching CV index i = 31, Original CV file name = abdullahqureshi3593_1912.pdf
+matchList(0) = engineering
+For file name : abdullahqureshi3593_1912.pdf ,  match count = 19 Unque match count = 1 , 
+ Unque match keyword = engineering Email =  Phone = 
+Start fetching CV index i = 32, Original CV file name = abdulraz555_584.pdf
+matchList(0) = engineering
+For file name : abdulraz555_584.pdf ,  match count = 2 Unque match count = 1 , 
+ Unque match keyword = engineering Email =  Phone = 
+Start fetching CV index i = 33, Original CV file name = abmishraji_59.pdf
+matchList(0) = engineering
+For file name : abmishraji_59.pdf ,  match count = 1 Unque match count = 1 , 
+ Unque match keyword = engineering Email =  Phone = 
+Start fetching CV index i = 34, Original CV file name = aghilak.k4_3067.pdf
+For file name : aghilak.k4_3067.pdf ,  match count = 0 Unque match count = 0 , 
+ Unque match keyword =  Email =  Phone = 
+Start fetching CV index i = 35, Original CV file name = akila.mca2009_2577.pdf
+matchList(0) = agile
+matchList(1) = c#
+matchList(2) = java
+For file name : akila.mca2009_2577.pdf ,  match count = 9 Unque match count = 3 , 
+ Unque match keyword = agile c# java Email =  Phone = 
+Start fetching CV index i = 36, Original CV file name = ali_manzar08_2437.pdf
+For file name : ali_manzar08_2437.pdf ,  match count = 0 Unque match count = 0 , 
+ Unque match keyword =  Email =  Phone = 
+Start fetching CV index i = 37, Original CV file name = anoopmr030_674.pdf
+matchList(0) = engineering
+For file name : anoopmr030_674.pdf ,  match count = 5 Unque match count = 1 , 
+ Unque match keyword = engineering Email =  Phone = 
+Start fetching CV index i = 38, Original CV file name = Imtiyaznd_1472.pdf
+For file name : Imtiyaznd_1472.pdf ,  match count = 0 Unque match count = 0 , 
+ Unque match keyword =  Email =  Phone = 
+Start fetching CV index i = 39, Original CV file name = jadhavnaresh11_339.pdf
+matchList(0) = java
+For file name : jadhavnaresh11_339.pdf ,  match count = 5 Unque match count = 1 , 
+ Unque match keyword = java Email =  Phone = 
+Start fetching CV index i = 40, Original CV file name = junaidcps_500.pdf
+matchList(0) = engineering
+For file name : junaidcps_500.pdf ,  match count = 5 Unque match count = 1 , 
+ Unque match keyword = engineering Email =  Phone = 
+Start fetching CV index i = 41, Original CV file name = Kamwendait_2668.pdf
+matchList(0) = python
+For file name : Kamwendait_2668.pdf ,  match count = 1 Unque match count = 1 , 
+ Unque match keyword = python Email =  Phone = 
+Start fetching CV index i = 42, Original CV file name = lovepreet.sroyea_676.pdf
+matchList(0) = engineering
+For file name : lovepreet.sroyea_676.pdf ,  match count = 2 Unque match count = 1 , 
+ Unque match keyword = engineering Email =  Phone = 
+Start fetching CV index i = 43, Original CV file name = m.ramya19_2603.pdf
+matchList(0) = engineering
+matchList(1) = c#
+matchList(2) = java
+matchList(3) = python
+matchList(4) = oracle
+For file name : m.ramya19_2603.pdf ,  match count = 7 Unque match count = 5 , 
+ Unque match keyword = engineering c# java python oracle Email = m.ramya19@yahoo.in Phone = 9710100160
+Start fetching CV index i = 44, Original CV file name = Mohanlobra_510.pdf
+matchList(0) = engineering
+For file name : Mohanlobra_510.pdf ,  match count = 2 Unque match count = 1 , 
+ Unque match keyword = engineering Email =  Phone = 
+Start fetching CV index i = 45, Original CV file name = morahman92_774.pdf
+matchList(0) = engineering
+For file name : morahman92_774.pdf ,  match count = 4 Unque match count = 1 , 
+ Unque match keyword = engineering Email =  Phone = 
+Start fetching CV index i = 46, Original CV file name = mSa.deshpandenavin_2907.pdf
+matchList(0) = python
+For file name : mSa.deshpandenavin_2907.pdf ,  match count = 1 Unque match count = 1 , 
+ Unque match keyword = python Email =  Phone = 
+Start fetching CV index i = 47, Original CV file name = Noorsip_2910.pdf
+For file name : Noorsip_2910.pdf ,  match count = 0 Unque match count = 0 , 
+ Unque match keyword =  Email =  Phone = 
+Start fetching CV index i = 48, Original CV file name = olivier.galland_2803.pdf
+For file name : olivier.galland_2803.pdf ,  match count = 0 Unque match count = 0 , 
+ Unque match keyword =  Email =  Phone = 
+Start fetching CV index i = 49, Original CV file name = palaksparekh06_1690.pdf
+matchList(0) = engineering
+matchList(1) = oracle
+matchList(2) = java
+For file name : palaksparekh06_1690.pdf ,  match count = 4 Unque match count = 3 , 
+ Unque match keyword = engineering oracle java Email =  Phone = 
+Start fetching CV index i = 50, Original CV file name = ra.jaleco_531.pdf
+For file name : ra.jaleco_531.pdf ,  match count = 0 Unque match count = 0 , 
+ Unque match keyword =  Email =  Phone = 
+Start fetching CV index i = 51, Original CV file name = rabiasantki54_1558.pdf
+matchList(0) = engineering
+For file name : rabiasantki54_1558.pdf ,  match count = 3 Unque match count = 1 , 
+ Unque match keyword = engineering Email =  Phone = 
+Start fetching CV index i = 52, Original CV file name = rama.mech_900.pdf
+matchList(0) = engineering
+For file name : rama.mech_900.pdf ,  match count = 1 Unque match count = 1 , 
+ Unque match keyword = engineering Email =  Phone = 
+Start fetching CV index i = 53, Original CV file name = ravisharma12oct_2214.pdf
+matchList(0) = engineering
+For file name : ravisharma12oct_2214.pdf ,  match count = 1 Unque match count = 1 , 
+ Unque match keyword = engineering Email =  Phone = 
+Start fetching CV index i = 54, Original CV file name = sahabudeen78_2063.pdf
+matchList(0) = oracle
+matchList(1) = java
+For file name : sahabudeen78_2063.pdf ,  match count = 5 Unque match count = 2 , 
+ Unque match keyword = oracle java Email =  Phone = 
+Start fetching CV index i = 55, Original CV file name = salmani.fariyad_1211.pdf
+matchList(0) = engineering
+For file name : salmani.fariyad_1211.pdf ,  match count = 1 Unque match count = 1 , 
+ Unque match keyword = engineering Email =  Phone = 
+Start fetching CV index i = 56, Original CV file name = sbnmech_2420.pdf
+matchList(0) = engineering
+For file name : sbnmech_2420.pdf ,  match count = 1 Unque match count = 1 , 
+ Unque match keyword = engineering Email =  Phone = 
+Start fetching CV index i = 57, Original CV file name = shahwazakhter_1992.pdf
+matchList(0) = c#
+matchList(2) = engineering
+For file name : shahwazakhter_1992.pdf ,  match count = 3 Unque match count = 2 , 
+ Unque match keyword = c# engineering Email =  Phone = 
+Start fetching CV index i = 58, Original CV file name = shanbagam_2486.pdf
+matchList(0) = java
+matchList(1) = c#
+matchList(2) = python
+matchList(3) = oracle
+WARNING : strphonematchOut for shanbagam_2486.pdf = No phone nbr detected No phone nbr found in this CV 
+For file name : shanbagam_2486.pdf ,  match count = 5 Unque match count = 4 , 
+ Unque match keyword = java c# python oracle Email = shanbagam@gmail.com Phone = No phone nbr detected
+Start fetching CV index i = 59, Original CV file name = theglobeug_2286.pdf
+matchList(0) = engineering
+For file name : theglobeug_2286.pdf ,  match count = 4 Unque match count = 1 , 
+ Unque match keyword = engineering Email =  Phone = 
+Start fetching CV index i = 60, Original CV file name = vpsreeraj_1640.pdf
+matchList(0) = oracle
+matchList(1) = c#
+matchList(2) = java
+For file name : vpsreeraj_1640.pdf ,  match count = 3 Unque match count = 3 , 
+ Unque match keyword = oracle c# java Email =  Phone = 

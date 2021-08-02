@@ -1,0 +1,257 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="excelTable" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1039,3098" sap2010:WorkflowViewState.IdRef="excelTable_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:beh="clr-namespace:BalaReva.EasyExcel.HyperLinks;assembly=BalaReva.EasyExcel" xmlns:bem="clr-namespace:BalaReva.EasyExcel.Main;assembly=BalaReva.EasyExcel" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="35">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>BalaReva.EasyExcel.HyperLinks</x:String>
+      <x:String>BalaReva.EasyExcel.Base</x:String>
+      <x:String>BalaReva.EasyExcel.Main</x:String>
+      <x:String>BalaReva.EasyExcel.Utilities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>BalaReva.EasyExcel.Sheets</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="31">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>BalaReva.EasyExcel</AssemblyReference>
+      <AssemblyReference>BalaReva.EasyExcel.Utilities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Sequence - Create Hyper Link on matchOut.xlsx" sap:VirtualizedContainerService.HintSize="767,3033" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="startRow" />
+      <Variable x:TypeArguments="x:Boolean" Name="linkOK" />
+      <Variable x:TypeArguments="x:String" Name="CVname" />
+      <Variable x:TypeArguments="x:String" Name="defaultPath" />
+      <Variable x:TypeArguments="x:String" Name="foldername" />
+      <Variable x:TypeArguments="x:String" Default="Data\matchOut.xlsx" Name="outputxlsxFile" />
+      <Variable x:TypeArguments="x:String" Default="Data\CVs_docx" Name="URI_docx" />
+      <Variable x:TypeArguments="x:String" Default="Data\CVs_pdf" Name="URI_pdf" />
+      <Variable x:TypeArguments="x:String" Name="Hyperlink" />
+      <Variable x:TypeArguments="x:Int32" Default="20" Name="nbrOfHyperlink" />
+      <Variable x:TypeArguments="x:String" Name="variable1" />
+      <Variable x:TypeArguments="x:Boolean" Name="OptionOn">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Boolean" Value="True" />
+        </Variable.Default>
+      </Variable>
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:MultipleAssign sap2010:Annotation.AnnotationText="h =&gt; row index of CV  name in the spreadsheet." DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="725,160" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[defaultPath]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[Environment.CurrentDirectory.ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int32">[startRow]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int32">2</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:MultipleAssign>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="725,61" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="[defaultPath]" />
+    <If Condition="[OptionOn]" sap:VirtualizedContainerService.HintSize="725,885" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="376,708" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:Int32" Name="endRow" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Enter the start row number : " Title="User input1">
+            <ui:InputDialog.Result>
+              <OutArgument x:TypeArguments="x:Int32">[startRow]</OutArgument>
+            </ui:InputDialog.Result>
+          </ui:InputDialog>
+          <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Enter the last row number : " Title="User input2">
+            <ui:InputDialog.Result>
+              <OutArgument x:TypeArguments="x:Int32">[endRow]</OutArgument>
+            </ui:InputDialog.Result>
+          </ui:InputDialog>
+          <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">[nbrOfHyperlink]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">[startRow+((endRow-startRow)-1)]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+    </If>
+    <ui:InterruptibleWhile Condition="[startRow&lt;nbrOfHyperlink+2]" DisplayName="While" sap:VirtualizedContainerService.HintSize="725,1715" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+      <ui:InterruptibleWhile.Body>
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="689,1550" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="647,403" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="Data\matchOut.xlsx">
+            <ui:ExcelApplicationScope.Body>
+              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,294" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ExcelReadCell sap2010:Annotation.AnnotationText="extract CV name&#xA;" Cell="[&quot;B&quot;+startRow.ToString]" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,101" sap2010:WorkflowViewState.IdRef="ExcelReadCell_1" SheetName="matchOut">
+                    <ui:ExcelReadCell.Result>
+                      <OutArgument x:TypeArguments="x:String">[CVname]</OutArgument>
+                    </ui:ExcelReadCell.Result>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:ExcelReadCell>
+                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[&quot;CVname = &quot;+CVname]" />
+                </Sequence>
+              </ActivityAction>
+            </ui:ExcelApplicationScope.Body>
+          </ui:ExcelApplicationScope>
+          <bem:ExcelScope FilePassword="{x:Null}" ModifyPassword="{x:Null}" DisplayAlerts="False" DisplayName="Excel Scope - Need to install BalaReva.Easy.Excel.Activities Package" FilePath="[defaultPath+&quot;\&quot;+outputxlsxFile]" sap:VirtualizedContainerService.HintSize="647,814" sap2010:WorkflowViewState.IdRef="ExcelScope_1" UpdateAutoLinks="Default" Visible="False">
+            <bem:ExcelScope.Body>
+              <ActivityAction x:TypeArguments="bem:ExcelParam">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="bem:ExcelParam" Name="WorkBookObj" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="611,673" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If Condition="[CVname.Contains(&quot;.docx&quot;) or CVname.Contains(&quot;.DOCX&quot;)]" sap:VirtualizedContainerService.HintSize="569,217" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If.Then>
+                      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[foldername]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[URI_docx]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </If.Then>
+                    <If.Else>
+                      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[foldername]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[URI_pdf]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </If.Else>
+                  </If>
+                  <Assign sap:VirtualizedContainerService.HintSize="569,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[Hyperlink]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[defaultPath+"\"+foldername+"\"+CVname]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="569,61" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[&quot;Hyper Link = &quot;+Hyperlink]" />
+                  <beh:InsertHyperlink Address="[Hyperlink]" Cell="[&quot;B&quot;+startRow.ToString]" ContinueOnError="False" Delay="1" DisplayName="Insert Hyperlink" DisplayText="[CVname]" DisplayTextOverwirte="False" ExecutionResult="[linkOK]" sap:VirtualizedContainerService.HintSize="569,22" sap2010:WorkflowViewState.IdRef="InsertHyperlink_1" SheetName="matchOut" />
+                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="569,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;link ok = &quot;+linkOK.ToString]" />
+                </Sequence>
+              </ActivityAction>
+            </bem:ExcelScope.Body>
+          </bem:ExcelScope>
+          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="647,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[&quot;h = &quot;+startRow.ToString]" />
+          <Assign sap:VirtualizedContainerService.HintSize="647,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">[startRow]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">[startRow+1]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </ui:InterruptibleWhile.Body>
+    </ui:InterruptibleWhile>
+  </Sequence>
+</Activity>

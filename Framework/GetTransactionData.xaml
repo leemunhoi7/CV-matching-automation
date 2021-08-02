@@ -1,0 +1,443 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="GetTransactionData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:beh="clr-namespace:BalaReva.EasyExcel.HyperLinks;assembly=BalaReva.EasyExcel" xmlns:bem="clr-namespace:BalaReva.EasyExcel.Main;assembly=BalaReva.EasyExcel" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="out_TransactionItem" Type="OutArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Allow the optional addition of information about the transaction item." Name="out_TransactionField1" Type="OutArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Allow the optional addition of information about the transaction item." Name="out_TransactionField2" Type="OutArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Transaction ID used for information and logging purposes. Ideally, the ID should be unique for each transaction. " Name="out_TransactionID" Type="OutArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="This variable can be used in case transactions are stored in a DataTable (for example, after being retrieved from a spreadsheet)." Name="io_TransactionData" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="io_fileList" Type="InOutArgument(s:String[])" />
+    <x:Property sap2010:Annotation.AnnotationText="Sequential counter of transaction items." Name="io_TransactionNumber" Type="InOutArgument(x:Int32)" />
+    <x:Property Name="in_matchCount" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_matchDistinctCount" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_stremailmatchOut" Type="InArgument(x:String)" />
+    <x:Property Name="in_strphonematchOut" Type="InArgument(x:String)" />
+    <x:Property Name="io_filename" Type="InOutArgument(x:String)" />
+    <x:Property Name="in_strMatchKeyword" Type="InArgument(x:String)" />
+    <x:Property Name="in_TTLKeywordCount" Type="InArgument(x:Int32)" />
+  </x:Members>
+  <this:GetTransactionData.in_strMatchKeyword>
+    <InArgument x:TypeArguments="x:String" />
+  </this:GetTransactionData.in_strMatchKeyword>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1274,5335</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>GetTransactionData_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="62">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>Microsoft.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>BalaReva.EasyExcel.Main</x:String>
+      <x:String>BalaReva.EasyExcel.Utilities</x:String>
+      <x:String>BalaReva.EasyExcel.Base</x:String>
+      <x:String>BalaReva.EasyExcel.HyperLinks</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="60">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>Microsoft.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualStudio.Services.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>BalaReva.EasyExcel</AssemblyReference>
+      <AssemblyReference>BalaReva.EasyExcel.Utilities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Get a transaction item from a specified source (e.g., Orchestrator queues, spreadsheets, databases, mailboxes or web APIs). &#xA;&#xA;If there are no transaction items remaining, out_TransactionItem is set to Nothing, which leads to the End Process state. &#xA;&#xA;For cases in which there is only a single transaction (i.e., a linear process), use an If activity to check whether the argument in_TransactionNumber has the value 1 (meaning it is the first and only transaction) and assign the transaction item to out_TransactionItem. For any other value of in_TransactionNumber, out_TransactionItem should be set to Nothing.&#xA;&#xA;If there are multiple transactions, use the argument in_TransactionNumber as an index to retrieve the correct transaction to be processed. If there are no more transactions left, it is necessary to set out_TransactionItem to Nothing, thus ending the process." DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="1284,5270" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="DT_csv" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1242,384" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,306" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:GetQueueItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Get a transaction item from the specified Orchestrator queue.&#xA;If queues are not used in this process, replace this activity with the appropriated logic to retrieve transaction items.&#xA;For example, if transactions are rows from a DataTable, the row corresponding to the current transaction is retrieved at this point." DisplayName="Get transaction item" sap:VirtualizedContainerService.HintSize="200,214" sap2010:WorkflowViewState.IdRef="GetQueueItem_1" QueueType="[in_Config(&quot;OrchestratorQueueName&quot;).ToString]" TransactionItem="[out_TransactionItem]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:GetQueueItem>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <If sap2010:Annotation.AnnotationText="This optional step can be used to include more information about a transaction item and it is used mainly for logging and visualization purposes.&#xA;For example, if transaction items are invoices, then out_TransactionID can be the invoice number, out_TransactionField1 can be the invoice date and out_TransactionField2 can be the invoice amount." Condition="[io_TransactionNumber &lt; io_fileList.Count]" DisplayName="If a new transaction item is retrieved, get additional information about it" sap:VirtualizedContainerService.HintSize="1242,4607" sap2010:WorkflowViewState.IdRef="If_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="346,686" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="304,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[out_TransactionItem]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[io_fileList(io_TransactionNumber)]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign sap:VirtualizedContainerService.HintSize="304,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[io_filename]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[Path.GetFilename(out_TransactionItem.ToString).ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Sequence sap2010:Annotation.AnnotationText="Write data to the added log fields that identify the transaction." DisplayName="Add transaction information to log fields" sap:VirtualizedContainerService.HintSize="304,394" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Assign out_TransactionID" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[out_TransactionID]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[now.ToString]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign out_TransactionField1" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[out_TransactionField1]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[string.Empty]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign out_TransactionField2" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[out_TransactionField2]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[string.Empty]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="851,4407" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="809,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[out_TransactionItem]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[Nothing]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Sequence DisplayName="Sequence - convert csv to xlsx and sort best matched CVs and output to matchOut.xlsx" sap:VirtualizedContainerService.HintSize="809,4215" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="767,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="Beginning of post transaction process... " />
+            <Sequence DisplayName="Sequence - output to matchOut.xlsx" sap:VirtualizedContainerService.HintSize="767,244" sap2010:WorkflowViewState.IdRef="Sequence_9">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[DT_csv]" Delimitator="Comma" DisplayName="Read CSV - upload CSV file to data table" FilePath="[in_Config(&quot;outputcsvFile&quot;).ToString]" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" />
+            </Sequence>
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="767,384" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+              <TryCatch.Try>
+                <ui:MoveFile ContinueOnError="{x:Null}" Destination="[in_Config(&quot;URI_OldData&quot;).ToString]" DisplayName="Move File - To prevent appending new run data to existing csv file" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="MoveFile_2" Overwrite="True" Path="[in_Config(&quot;outputcsvFile&quot;).ToString]" />
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="si:IOException" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="si:IOException">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="si:IOException" Name="exception" />
+                    </ActivityAction.Argument>
+                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="No old matchOut.csv exist" />
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+            <TryCatch DisplayName="Try Catch - move out old matchOut.xlsx if it exist" sap:VirtualizedContainerService.HintSize="767,384" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+              <TryCatch.Try>
+                <ui:MoveFile ContinueOnError="{x:Null}" Destination="[in_Config(&quot;URI_OldData&quot;).ToString]" DisplayName="Move File - To prevent appending new run data to existing csv file" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[in_Config(&quot;outputxlsxFile&quot;).ToString]" />
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="si:IOException" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="si:IOException">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="si:IOException" Name="exception" />
+                    </ActivityAction.Argument>
+                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="No old matchOut.xlsx exist" />
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+            <ui:WriteRange AddHeaders="True" DataTable="[DT_csv]" DisplayName="Write Range - create xlsx file from data table" sap:VirtualizedContainerService.HintSize="767,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="matchOut" StartingCell="A1" WorkbookPath="[in_Config(&quot;outputxlsxFile&quot;).ToString]" />
+            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="767,542" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[in_Config(&quot;outputxlsxFile&quot;).ToString]">
+              <ui:ExcelApplicationScope.Body>
+                <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,433" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ExcelCreateTable DisplayName="Create Table" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelCreateTable_1" Range="[&quot;A1:G&quot;+(io_TransactionNumber+1).ToString]" SheetName="matchOut" TableName="matchTable" />
+                    <ui:ExcelSortTable ColumnName="MatchCount" DisplayName="Sort Table" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelSortTable_1" Order="Descending" SheetName="matchOut" TableName="matchTable" />
+                    <ui:ExcelWriteCell Cell="[&quot;D2:D&quot;+(io_TransactionNumber+1).ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="matchOut" Text="[&quot;=ROUND(C2/&quot;+in_TTLKeywordCount.ToString+&quot;*100,0)&quot;]" />
+                  </Sequence>
+                </ActivityAction>
+              </ui:ExcelApplicationScope.Body>
+            </ui:ExcelApplicationScope>
+            <Sequence DisplayName="Sequence - Create Hyper Link on matchOut.xlsx" sap:VirtualizedContainerService.HintSize="767,2153" sap2010:WorkflowViewState.IdRef="Sequence_15">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:Int32" Name="rowNbr" />
+                <Variable x:TypeArguments="x:Boolean" Name="linkOK" />
+                <Variable x:TypeArguments="x:String" Name="CVname" />
+                <Variable x:TypeArguments="x:String" Name="defaultPath" />
+                <Variable x:TypeArguments="x:String" Name="foldername" />
+                <Variable x:TypeArguments="x:String" Name="Hyperlink" />
+                <Variable x:TypeArguments="x:Int32" Name="hyperlinkCount" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:MultipleAssign sap2010:Annotation.AnnotationText="rowNbr =&gt; matchOut sheet row index nbr to start from 2 for 1st row." DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="725,202" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                <ui:MultipleAssign.AssignOperations>
+                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[defaultPath]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[Environment.CurrentDirectory.ToString]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:Int32">[rowNbr]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:Int32">2</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:Int32">[hyperlinkCount]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:Int32">[Convert.ToInt32(in_Config("nbrOfHyperlink"))]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                  </scg:List>
+                </ui:MultipleAssign.AssignOperations>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:MultipleAssign>
+              <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="725,64" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[&quot;defaultPath = &quot;+defaultPath+vbCrLf+&#xA;&quot;hyperlinkCount = &quot;+hyperlinkCount.ToString]" />
+              <ui:InterruptibleWhile Condition="[rowNbr&lt;hyperlinkCount+2]" DisplayName="While" sap:VirtualizedContainerService.HintSize="725,1715" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                <ui:InterruptibleWhile.Body>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="689,1550" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="variable1" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="647,403" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="[in_Config(&quot;outputxlsxFile&quot;).ToString]">
+                      <ui:ExcelApplicationScope.Body>
+                        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,294" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:ExcelReadCell sap2010:Annotation.AnnotationText="extract CV name&#xA;" Cell="[&quot;B&quot;+rowNbr.ToString]" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,101" sap2010:WorkflowViewState.IdRef="ExcelReadCell_1" SheetName="matchOut">
+                              <ui:ExcelReadCell.Result>
+                                <OutArgument x:TypeArguments="x:String">[CVname]</OutArgument>
+                              </ui:ExcelReadCell.Result>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:ExcelReadCell>
+                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;CVname = &quot;+CVname]" />
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ExcelApplicationScope.Body>
+                    </ui:ExcelApplicationScope>
+                    <bem:ExcelScope FilePassword="{x:Null}" ModifyPassword="{x:Null}" DisplayAlerts="False" DisplayName="Excel Scope - Need to install BalaReva.Easy.Excel.Activities Package" FilePath="[defaultPath+&quot;\&quot;+in_Config(&quot;outputxlsxFile&quot;).ToString]" sap:VirtualizedContainerService.HintSize="647,814" sap2010:WorkflowViewState.IdRef="ExcelScope_1" UpdateAutoLinks="Default" Visible="False">
+                      <bem:ExcelScope.Body>
+                        <ActivityAction x:TypeArguments="bem:ExcelParam">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="bem:ExcelParam" Name="WorkBookObj" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="611,673" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If Condition="[CVname.Contains(&quot;.docx&quot;) or CVname.Contains(&quot;.DOCX&quot;)]" sap:VirtualizedContainerService.HintSize="569,217" sap2010:WorkflowViewState.IdRef="If_2">
+                              <If.Then>
+                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[foldername]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">[in_Config("URI_docx").ToString]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </If.Then>
+                              <If.Else>
+                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[foldername]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">[in_Config("URI_pdf").ToString]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </If.Else>
+                            </If>
+                            <Assign sap:VirtualizedContainerService.HintSize="569,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[Hyperlink]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[defaultPath+"\"+foldername+"\"+CVname]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="569,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[&quot;Hyper Link = &quot;+Hyperlink]" />
+                            <beh:InsertHyperlink Address="[Hyperlink]" Cell="[&quot;B&quot;+rowNbr.ToString]" ContinueOnError="False" Delay="1" DisplayName="Insert Hyperlink" DisplayText="[CVname]" DisplayTextOverwirte="False" ExecutionResult="[linkOK]" sap:VirtualizedContainerService.HintSize="569,22" sap2010:WorkflowViewState.IdRef="InsertHyperlink_1" SheetName="matchOut" />
+                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="569,61" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[&quot;link ok = &quot;+linkOK.ToString]" />
+                          </Sequence>
+                        </ActivityAction>
+                      </bem:ExcelScope.Body>
+                    </bem:ExcelScope>
+                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="647,61" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="[&quot;rowNbr = &quot;+rowNbr.ToString]" />
+                    <Assign sap:VirtualizedContainerService.HintSize="647,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Int32">[rowNbr]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Int32">[rowNbr+1]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </ui:InterruptibleWhile.Body>
+              </ui:InterruptibleWhile>
+            </Sequence>
+          </Sequence>
+        </Sequence>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>

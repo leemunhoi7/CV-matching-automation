@@ -1,0 +1,858 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1065,13397" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:beh="clr-namespace:BalaReva.EasyExcel.HyperLinks;assembly=BalaReva.EasyExcel" xmlns:bem="clr-namespace:BalaReva.EasyExcel.Main;assembly=BalaReva.EasyExcel" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="37">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Word.Activities</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.PDF.Activities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="33">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
+      <AssemblyReference>BalaReva.EasyExcel</AssemblyReference>
+      <AssemblyReference>BalaReva.EasyExcel.Utilities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Sequence - CV Matching" sap:VirtualizedContainerService.HintSize="1075,13332" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="strmatchOut" />
+      <Variable x:TypeArguments="s:String[]" Name="fileList" />
+      <Variable x:TypeArguments="x:Int32" Name="j" />
+      <Variable x:TypeArguments="scg:List(x:String)" Default="[new List(of String)]" Name="matchList" />
+      <Variable x:TypeArguments="x:String" Name="strDoc1" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="matchCount" />
+      <Variable x:TypeArguments="x:Int32" Name="matchDistinctCount" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="i" />
+      <Variable x:TypeArguments="x:String" Name="URI_docx">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">Data\CVs_docx</Literal>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="filename" />
+      <Variable x:TypeArguments="x:String" Name="pattern1" />
+      <Variable x:TypeArguments="x:String" Default="Data\matchOut.csv" Name="outputcsvFile" />
+      <Variable x:TypeArguments="x:String" Name="matchTable" />
+      <Variable x:TypeArguments="x:String" Name="strMatchKeyword" />
+      <Variable x:TypeArguments="scg:List(x:String)" Default="[new List(of String)]" Name="unqueMatchList" />
+      <Variable x:TypeArguments="sd:DataTable" Name="DT_keyword" />
+      <Variable x:TypeArguments="x:String" Default="Data\Config.xlsx" Name="inputFile" />
+      <Variable x:TypeArguments="x:Int32" Name="n" />
+      <Variable x:TypeArguments="s:String[]" Default="[new string(){&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;}]" Name="key" />
+      <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="emailmatchOut" />
+      <Variable x:TypeArguments="x:String" Default="NIL" Name="stremailmatchOut" />
+      <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="phonematchOut" />
+      <Variable x:TypeArguments="x:String" Default="NIL" Name="strphonematchOut" />
+      <Variable x:TypeArguments="x:String" Default="Data\OutputLog.txt" Name="outputlogFile" />
+      <Variable x:TypeArguments="s:String[]" Name="fileList1" />
+      <Variable x:TypeArguments="s:String[]" Name="fileList2" />
+      <Variable x:TypeArguments="x:String" Name="URI_pdf">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">Data\CVs_pdf</Literal>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="s:String[]" Default="[new string(){&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;}]" Name="ptn" />
+      <Variable x:TypeArguments="x:String" Name="keyword" />
+      <Variable x:TypeArguments="x:String" Name="pattern" />
+      <Variable x:TypeArguments="sd:DataTable" Name="DT_csv" />
+      <Variable x:TypeArguments="x:String" Default="Data\matchOut.xlsx" Name="outputxlsxFile" />
+      <Variable x:TypeArguments="x:Int32" Name="TTLKeywordCount" />
+      <Variable x:TypeArguments="x:Int32" Name="QualifiedCount" />
+      <Variable x:TypeArguments="x:Int32" Default="7" Name="MaxKeyword" />
+      <Variable x:TypeArguments="x:String" Name="fileList3" />
+      <Variable x:TypeArguments="x:String" Default="Data" Name="URI_Data" />
+      <Variable x:TypeArguments="x:Int32" Name="TTLfileCount" />
+      <Variable x:TypeArguments="x:Int32" Name="h" />
+      <Variable x:TypeArguments="x:Boolean" Name="linkOK" />
+      <Variable x:TypeArguments="x:String" Name="CVname" />
+      <Variable x:TypeArguments="x:String" Name="defaultPath" />
+      <Variable x:TypeArguments="x:String" Name="foldername" />
+      <Variable x:TypeArguments="x:String" Name="Hyperlink" />
+      <Variable x:TypeArguments="x:Int32" Default="17" Name="nbrOfHyperlink" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[DT_keyword]" DisplayName="Read Range - read Config.xlsx" sap:VirtualizedContainerService.HintSize="1033,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Keywords" WorkbookPath="[inputFile]" />
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[n]" DataTable="[DT_keyword]" DisplayName="For Each Row in Data Table - fetch user definded-keyword from Config.xlsx" sap:VirtualizedContainerService.HintSize="1033,900" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+          </ActivityAction.Argument>
+          <Sequence sap:VirtualizedContainerService.HintSize="689,780" sap2010:WorkflowViewState.IdRef="Sequence_30">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If Condition="[Not String.IsNullOrWhiteSpace(row(&quot;keyword&quot;).ToString.Trim) and n&lt; MaxKeyword]" sap:VirtualizedContainerService.HintSize="647,688" sap2010:WorkflowViewState.IdRef="If_2">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="611,511" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="569,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[key(n)]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[row("keyword").tostring.Trim]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="569,61" sap2010:WorkflowViewState.IdRef="WriteLine_18" Text="[&quot;key&quot;+n.ToString+&quot; is &quot;+key(n)]" />
+                  <If Condition="[n=0]" sap:VirtualizedContainerService.HintSize="569,218" sap2010:WorkflowViewState.IdRef="If_10">
+                    <If.Then>
+                      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_28">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[ptn(n)]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">["\s"+key(0)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </If.Then>
+                    <If.Else>
+                      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_29">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[ptn(n)]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">["|\s"+key(n)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Then>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+    </ui:ForEachRow>
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1033,315" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int32">[TTLKeywordCount]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int32">[n+1]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int32">[QualifiedCount]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int32">[CInt((TTLKeywordCount*0.6).ToString)]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="s:String[]">[fileList1]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(URI_docx)]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="s:String[]">[fileList2]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(URI_pdf)]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="s:String[]">[fileList]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="s:String[]">[fileList1.Union(fileList2).ToArray]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[keyword]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[string.join(" , ",key)]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[pattern]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[string.Join("",ptn)]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int32">[TTLfileCount]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int32">[fileList.Count]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="1033,64" sap2010:WorkflowViewState.IdRef="WriteLine_31" Text="[&quot;User defined-keywords = &quot;+keyword+vbCrLf+&#xA;&quot;User defined-keywords Total Count = &quot;+TTLKeywordCount.ToString+vbCrLf+&#xA;&quot;Qualified Count = &quot;+QualifiedCount.ToString+vbCrLf+&#xA;&quot;Total file Count = &quot;+TTLfileCount.ToString+vbCrLf+&#xA;&quot;Match pattern used = &quot;+pattern]" />
+    <ui:AppendLine DisplayName="Append Line - Add headers to output csv file" FileName="[outputcsvFile]" sap:VirtualizedContainerService.HintSize="1033,132" sap2010:WorkflowViewState.IdRef="AppendLine_2" Text="CV_nbr,Name,MatchCount,Match%,Email,Phone,MatchKeywords" UseDefaultEncoding="False" />
+    <ui:AppendLine DisplayName="Append Line" FileName="[outputlogFile]" sap:VirtualizedContainerService.HintSize="1033,132" sap2010:WorkflowViewState.IdRef="AppendLine_8" Text="[&quot; &quot;+vbCrLf+&#xA;&quot;New Run    &quot;+vbCrLf+&#xA;&quot;User defined-keywords = &quot;+keyword+vbCrLf+&#xA;&quot;User defined-keywords Count = &quot;+TTLKeywordCount.ToString+vbCrLf+&#xA;&quot;QualifiedCount = &quot;+QualifiedCount.ToString+vbCrLf+&#xA;&quot;Match pattern = &quot;+pattern]" UseDefaultEncoding="False" />
+    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="[i]" DisplayName="For Each - fetch CV files from both Data\CVs_docx and Data\CVs_pdf" sap:VirtualizedContainerService.HintSize="1033,7059" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[fileList]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="file" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="997,6925" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="matchOut" />
+              <Variable x:TypeArguments="x:Int32" Name="k" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="955,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[filename]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[Path.GetFilename(file.ToString).ToString]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign  - i = CV file index number" sap:VirtualizedContainerService.HintSize="955,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[i]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[i+1]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="955,61" sap2010:WorkflowViewState.IdRef="WriteLine_16" Text="[&quot;Start fetching CV index nbr i  = &quot;+i.ToString+&quot; for filename : &quot;+filename]" />
+            <ui:AppendLine DisplayName="Append Line" FileName="[outputlogFile]" sap:VirtualizedContainerService.HintSize="955,132" sap2010:WorkflowViewState.IdRef="AppendLine_3" Text="[&quot;Start fetching CV index i = &quot;+i.ToString+&quot;, Original CV file name = &quot;+filename]" UseDefaultEncoding="False" />
+            <ClearCollection x:TypeArguments="x:String" Collection="[matchList]" DisplayName="Clear Collection" sap:VirtualizedContainerService.HintSize="955,22" sap2010:WorkflowViewState.IdRef="ClearCollection`1_1" />
+            <ClearCollection x:TypeArguments="x:String" Collection="[unqueMatchList]" DisplayName="Clear Collection" sap:VirtualizedContainerService.HintSize="955,22" sap2010:WorkflowViewState.IdRef="ClearCollection`1_2" />
+            <ui:MultipleAssign DisplayName="Multiple Assign " sap:VirtualizedContainerService.HintSize="955,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+              <ui:MultipleAssign.AssignOperations>
+                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[stremailmatchOut]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[strphonematchOut]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                </scg:List>
+              </ui:MultipleAssign.AssignOperations>
+            </ui:MultipleAssign>
+            <If Condition="[filename.Contains(&quot;.docx&quot;) or filename.Contains(&quot;.DOCX&quot;)]" sap:VirtualizedContainerService.HintSize="955,477" sap2010:WorkflowViewState.IdRef="If_6">
+              <If.Then>
+                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="472,319" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                  <TryCatch.Try>
+                    <p:DocumentReadText DisplayName="Read Text" FilePath="[file.ToString]" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="DocumentReadText_1" Text="[strDoc1]" />
+                  </TryCatch.Try>
+                  <TryCatch.Catches>
+                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="438,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ActivityAction x:TypeArguments="s:Exception">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                        </ActivityAction.Argument>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,387" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_28" Text="[&quot;ERROR: CV file name : &quot;+filename+&quot; is unable to be read. it will be skipped ! &quot;]" />
+                          <ui:AppendLine DisplayName="Append Line" FileName="[outputlogFile]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_6" Text="[&quot;ERROR: CV file name : &quot;+filename+&quot;.docx is unable to be read. it will be skipped ! &quot;]" UseDefaultEncoding="False" />
+                          <ui:Continue sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Continue_1" />
+                        </Sequence>
+                      </ActivityAction>
+                    </Catch>
+                  </TryCatch.Catches>
+                </TryCatch>
+              </If.Then>
+              <If.Else>
+                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,287" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                  <TryCatch.Try>
+                    <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text" FileName="[file.ToString]" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ReadPDFText_1" Range="All" Text="[strDoc1]" />
+                  </TryCatch.Try>
+                  <TryCatch.Catches>
+                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ActivityAction x:TypeArguments="s:Exception">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                        </ActivityAction.Argument>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,387" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_29" Text="[&quot;ERROR: CV file name : &quot;+filename+&quot; is unable to be read. it will be skipped ! &quot;]" />
+                          <ui:AppendLine DisplayName="Append Line" FileName="[outputlogFile]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_7" Text="[&quot;ERROR: CV file name : &quot;+filename+&quot;.pdf is unable to be read. it will be skipped ! &quot;]" UseDefaultEncoding="False" />
+                          <ui:Continue sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Continue_2" />
+                        </Sequence>
+                      </ActivityAction>
+                    </Catch>
+                  </TryCatch.Catches>
+                </TryCatch>
+              </If.Else>
+            </If>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="955,231" sap2010:WorkflowViewState.IdRef="CommentOut_10">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="272,153" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[strDoc1]" />
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+            <ui:Matches DisplayName="Matches - key(0) to key(6) via pattern" sap:VirtualizedContainerService.HintSize="955,59" sap2010:WorkflowViewState.IdRef="Matches_2" Input="[strDoc1]" IsBuilderTabModified="False" Pattern="[pattern]" RegexOption="IgnoreCase, Compiled" Result="[matchOut]" />
+            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="[j]" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="955,1498" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[matchOut]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="682,1364" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="640,231" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="272,153" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;j = &quot;+j.ToString+&quot;, item = &quot;+item.ToString+&quot;, matchOut(&quot;+j.ToString+&quot;) = &quot;+matchOut(j).value]" />
+                        </Sequence>
+                      </ui:CommentOut.Body>
+                    </ui:CommentOut>
+                    <AddToCollection x:TypeArguments="x:String" Collection="[matchList]" DisplayName="Add To Collection matchList" sap:VirtualizedContainerService.HintSize="640,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_1" Item="[item.ToString.ToLower.Trim]" />
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="640,939" sap2010:WorkflowViewState.IdRef="CommentOut_12">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="604,861" sap2010:WorkflowViewState.IdRef="Sequence_59">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If Condition="[j&gt;0]" sap:VirtualizedContainerService.HintSize="562,769" sap2010:WorkflowViewState.IdRef="If_8">
+                            <If.Then>
+                              <Sequence sap:VirtualizedContainerService.HintSize="526,593" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <If Condition="[not matchList(j)=matchList(j-1)]" DisplayName="If - Do not write line if same keyword matched" sap:VirtualizedContainerService.HintSize="484,501" sap2010:WorkflowViewState.IdRef="If_9">
+                                  <If.Then>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="376,325" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="[&quot;matchList(&quot;+j.ToString+&quot;) = &quot;+matchList(j)]" />
+                                      <ui:AppendLine DisplayName="Append Line" FileName="[outputlogFile]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_4" Text="[&quot;matchList(&quot;+j.ToString+&quot;) = &quot;+matchList(j)]" UseDefaultEncoding="False" />
+                                    </Sequence>
+                                  </If.Then>
+                                </If>
+                              </Sequence>
+                            </If.Then>
+                          </If>
+                        </Sequence>
+                      </ui:CommentOut.Body>
+                    </ui:CommentOut>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+            </ui:ForEach>
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[k]" DisplayName="For Each  - this sequence is to remove duplicated keywords" sap:VirtualizedContainerService.HintSize="955,790" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[matchList]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="x:String">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,656" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If Condition="[unqueMatchList.contains(item)=False]" sap:VirtualizedContainerService.HintSize="484,564" sap2010:WorkflowViewState.IdRef="If_7">
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,387" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <AddToCollection x:TypeArguments="x:String" Collection="[unqueMatchList]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_3" Item="[item.ToString.Trim]" />
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_42" Text="[&quot;matchList(&quot;+k.ToString+&quot;) = &quot;+item]" />
+                          <ui:AppendLine DisplayName="Append Line" FileName="[outputlogFile]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_11" Text="[&quot;matchList(&quot;+k.ToString+&quot;) = &quot;+item]" UseDefaultEncoding="False" />
+                        </Sequence>
+                      </If.Then>
+                    </If>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+            </ui:ForEach>
+            <Assign sap:VirtualizedContainerService.HintSize="955,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[matchCount]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[matchList.Count()]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign - count only unque matched keywords" sap:VirtualizedContainerService.HintSize="955,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[matchDistinctCount]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[matchList.Distinct().Count()]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="955,61" sap2010:WorkflowViewState.IdRef="WriteLine_10" Text="[&quot;matchCount = &quot;+matchCount.ToString+&quot;  j = &quot;+j.ToString]" />
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="955,61" sap2010:WorkflowViewState.IdRef="WriteLine_12" Text="[&quot;Unque match count = &quot;+matchDistinctCount.ToString]" />
+            <If Condition="[matchDistinctCount &gt;= QualifiedCount]" DisplayName="If - extract email address only if the CV at least  has 4 matched" sap:VirtualizedContainerService.HintSize="955,1673" sap2010:WorkflowViewState.IdRef="If_3">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="767,1496" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:Matches BuilderPattern="((?&gt;[a-zA-Z\d!#$%&amp;'*+\-\/=?^_`{|}~]+\x20*|&quot;((?=[\x01-\x7f])[^&quot;\\]|\\[\x01-\x7f])*&quot;\x20*)*(?&lt;angle&gt;&lt;))?((?!\.)(?&gt;\.?[a-zA-Z\d!#$%&amp;'*+\-\/=?^_`{|}~]+)+|&quot;((?=[\x01-\x7f])[^&quot;\\]|\\[\x01-\x7f])*&quot;)@(((?!-)[a-zA-Z\d\-]+(?&lt;!-)\.)+[a-zA-Z]{2,}|\[(((?(?&lt;!\[)\.)(25[0-5]|2[0-4]\d|[01]?\d?\d)){4}|[a-zA-Z\d\-]*[a-zA-Z\d]:((?=[\x01-\x7f])[^\\\[\]]|\\[\x01-\x7f])+)\])(?(angle)&gt;)" sap:VirtualizedContainerService.HintSize="725,59" sap2010:WorkflowViewState.IdRef="Matches_3" Input="[strDoc1]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;EMAIL&quot;,&quot;OperationName&quot;:&quot;Email&quot;,&quot;OperationValue&quot;:&quot;((?&gt;[a-zA-Z\\d!#$%&amp;'*+\\-\\\/=?^_`{|}~]+\\x20*|\&quot;((?=[\\x01-\\x7f])[^\&quot;\\\\]|\\\\[\\x01-\\x7f])*\&quot;\\x20*)*(?&lt;angle&gt;&lt;))?((?!\\.)(?&gt;\\.?[a-zA-Z\\d!#$%&amp;'*+\\-\\\/=?^_`{|}~]+)+|\&quot;((?=[\\x01-\\x7f])[^\&quot;\\\\]|\\\\[\\x01-\\x7f])*\&quot;)@(((?!-)[a-zA-Z\\d\\-]+(?&lt;!-)\\.)+[a-zA-Z]{2,}|\\[(((?(?&lt;!\\[)\\.)(25[0-5]|2[0-4]\\d|[01]?\\d?\\d)){4}|[a-zA-Z\\d\\-]*[a-zA-Z\\d]:((?=[\\x01-\\x7f])[^\\\\\\[\\]]|\\\\[\\x01-\\x7f])+)\\])(?(angle)&gt;)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="((?&gt;[a-zA-Z\d!#$%&amp;'*+\-\/=?^_`{|}~]+\x20*|&quot;((?=[\x01-\x7f])[^&quot;\\]|\\[\x01-\x7f])*&quot;\x20*)*(?&lt;angle&gt;&lt;))?((?!\.)(?&gt;\.?[a-zA-Z\d!#$%&amp;'*+\-\/=?^_`{|}~]+)+|&quot;((?=[\x01-\x7f])[^&quot;\\]|\\[\x01-\x7f])*&quot;)@(((?!-)[a-zA-Z\d\-]+(?&lt;!-)\.)+[a-zA-Z]{2,}|\[(((?(?&lt;!\[)\.)(25[0-5]|2[0-4]\d|[01]?\d?\d)){4}|[a-zA-Z\d\-]*[a-zA-Z\d]:((?=[\x01-\x7f])[^\\\[\]]|\\[\x01-\x7f])+)\])(?(angle)&gt;)" RegexOption="IgnoreCase" Result="[emailmatchOut]" />
+                  <If Condition="[emailmatchOut.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="725,583" sap2010:WorkflowViewState.IdRef="If_4">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="304,253" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="WriteLine_22" Text="[&quot;Extracted Email Id = &quot;+emailmatchOut(0).Value]" />
+                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_22">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[stremailmatchOut]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[emailmatchOut(0).Value]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,425" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_35">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[stremailmatchOut]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">No email Id detected</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_25" Text="[&quot;WARNING : stremailmatchOut for &quot;+filename+&quot; = &quot;+stremailmatchOut+&quot; No email Id found in this CV &quot;]" />
+                        <ui:AppendLine DisplayName="Append Line" FileName="[outputlogFile]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_9" Text="[&quot;WARNING : stremailmatchOut for &quot;+filename+&quot; = &quot;+stremailmatchOut+&quot; No email Id found in this CV &quot;]" UseDefaultEncoding="False" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <ui:Matches BuilderPattern="([0-9]( |-)?)?(\(?[0-9]{3}\)?|[0-9]{3})( |-)?([0-9]{3}( |-)?[0-9]{4}|[a-zA-Z0-9]{7})" sap:VirtualizedContainerService.HintSize="725,59" sap2010:WorkflowViewState.IdRef="Matches_4" Input="[strDoc1]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;USPHONE&quot;,&quot;OperationName&quot;:&quot;US phone number&quot;,&quot;OperationValue&quot;:&quot;([0-9]( |-)?)?(\\(?[0-9]{3}\\)?|[0-9]{3})( |-)?([0-9]{3}( |-)?[0-9]{4}|[a-zA-Z0-9]{7})&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="([0-9]( |-)?)?(\(?[0-9]{3}\)?|[0-9]{3})( |-)?([0-9]{3}( |-)?[0-9]{4}|[a-zA-Z0-9]{7})" RegexOption="IgnoreCase" Result="[phonematchOut]" />
+                  <If Condition="[phonematchOut.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="725,583" sap2010:WorkflowViewState.IdRef="If_5">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="304,253" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="WriteLine_23" Text="[&quot;Phone = &quot;+phonematchOut(0).Value]" />
+                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_23">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[strphonematchOut]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[phonematchOut(0).Value]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,425" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_36">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[strphonematchOut]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">No phone nbr detected</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_24" Text="[&quot;WARNING : strphonematchOut for &quot;+filename+&quot; = &quot;+strphonematchOut+&quot; No phone nbr found in this CV &quot;]" />
+                        <ui:AppendLine DisplayName="Append Line" FileName="[outputlogFile]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_10" Text="[&quot;WARNING : strphonematchOut for &quot;+filename+&quot; = &quot;+strphonematchOut+&quot; No phone nbr found in this CV &quot;]" UseDefaultEncoding="False" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Then>
+            </If>
+            <Sequence DisplayName="Sequence - output to csv " sap:VirtualizedContainerService.HintSize="955,697" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[strMatchKeyword]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[string.join(" " , unqueMatchList)]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_34" Text="[&quot; Unque match keyword = &quot;+strMatchKeyword]" />
+              <ui:AppendLine DisplayName="Append Line" FileName="[outputlogFile]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_5" Text="[&quot;For file name : &quot;+filename+&quot; , &quot;+&quot; match count = &quot;+matchCount.ToString+&quot; Unque match count = &quot;+matchDistinctCount.ToString+&quot; , &quot;+vbCrLf+&#xA;&quot; Unque match keyword = &quot;+strMatchKeyword+&quot; Email = &quot;+stremailmatchOut+&quot; Phone = &quot;+strphonematchOut]" UseDefaultEncoding="False" />
+              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[strmatchOut]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[i.ToString+","+filename+","+matchDistinctCount.ToString+", ,"+stremailmatchOut+" ,"+strphonematchOut+","+strMatchKeyword]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:AppendLine DisplayName="Append Line" FileName="[outputcsvFile]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[strmatchOut]" UseDefaultEncoding="False" />
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+    </ui:ForEach>
+    <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[DT_csv]" Delimitator="Comma" DisplayName="Read CSV - upload CSV file to data table" FilePath="[outputcsvFile]" sap:VirtualizedContainerService.HintSize="1033,152" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" />
+    <TryCatch DisplayName="Try Catch - move out old matchOut.xlsx if it exist" sap:VirtualizedContainerService.HintSize="1033,476" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+      <TryCatch.Try>
+        <Sequence sap:VirtualizedContainerService.HintSize="426,249" sap2010:WorkflowViewState.IdRef="Sequence_60">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MoveFile ContinueOnError="{x:Null}" Destination="Old_Data" DisplayName="Move File - To prevent appending new run data to existing csv file" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="MoveFile_4" Overwrite="True" Path="Data\matchOut.xlsx" />
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="si:IOException" sap:VirtualizedContainerService.HintSize="430,21" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="si:IOException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="si:IOException" Name="exception" />
+            </ActivityAction.Argument>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_41" Text="No old matchOut.xlsx exist" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <TryCatch DisplayName="Try Catch - move out old matchOut.xlsx if it exist" sap:VirtualizedContainerService.HintSize="1033,476" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+      <TryCatch.Try>
+        <Sequence sap:VirtualizedContainerService.HintSize="426,249" sap2010:WorkflowViewState.IdRef="Sequence_61">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MoveFile ContinueOnError="{x:Null}" Destination="Old_Data" DisplayName="Move File - To prevent appending new run data to existing csv file" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="MoveFile_5" Overwrite="True" Path="Data\matchOut.csv" />
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="si:IOException" sap:VirtualizedContainerService.HintSize="430,21" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="si:IOException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="si:IOException" Name="exception" />
+            </ActivityAction.Argument>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_43" Text="No old matchOut.csv exist" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:WriteRange AddHeaders="True" DataTable="[DT_csv]" DisplayName="Write Range - create xlsx file from data table" sap:VirtualizedContainerService.HintSize="1033,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="matchOut" StartingCell="A1" WorkbookPath="[outputxlsxFile]" />
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="1033,542" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="[outputxlsxFile]">
+      <ui:ExcelApplicationScope.Body>
+        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,433" sap2010:WorkflowViewState.IdRef="Sequence_23">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ExcelCreateTable DisplayName="Create Table" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelCreateTable_2" Range="[&quot;A1:G&quot;+(i+1).ToString]" SheetName="matchOut" TableName="matchTable" />
+            <ui:ExcelSortTable ColumnName="MatchCount" DisplayName="Sort Table" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelSortTable_2" Order="Descending" SheetName="matchOut" TableName="matchTable" />
+            <ui:ExcelWriteCell Cell="[&quot;D2:D&quot;+(i+1).ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="matchOut" Text="[&quot;=ROUND(C2/&quot;+(n+1).ToString+&quot;*100,0)&quot;]" />
+          </Sequence>
+        </ActivityAction>
+      </ui:ExcelApplicationScope.Body>
+    </ui:ExcelApplicationScope>
+    <Sequence DisplayName="Sequence - Create Hyper Link on matchOut.xlsx" sap:VirtualizedContainerService.HintSize="1033,2108" sap2010:WorkflowViewState.IdRef="Sequence_57">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:MultipleAssign sap2010:Annotation.AnnotationText="h =&gt; matchOut sheet row index." DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="725,160" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+        <ui:MultipleAssign.AssignOperations>
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[defaultPath]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">[Environment.CurrentDirectory.ToString]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:Int32">[h]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:Int32">2</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+          </scg:List>
+        </ui:MultipleAssign.AssignOperations>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:MultipleAssign>
+      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="725,61" sap2010:WorkflowViewState.IdRef="WriteLine_35" Text="[defaultPath]" />
+      <ui:InterruptibleWhile Condition="[h&lt;nbrOfHyperlink+2 and h&lt;TTLfileCount+2]" DisplayName="While" sap:VirtualizedContainerService.HintSize="725,1715" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+        <ui:InterruptibleWhile.Body>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="689,1550" sap2010:WorkflowViewState.IdRef="Sequence_56">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="647,403" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" InstanceCachePeriod="3000" WorkbookPath="Data\matchOut.xlsx">
+              <ui:ExcelApplicationScope.Body>
+                <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,294" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ExcelReadCell sap2010:Annotation.AnnotationText="extract CV name&#xA;" Cell="[&quot;B&quot;+h.ToString]" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,101" sap2010:WorkflowViewState.IdRef="ExcelReadCell_1" SheetName="matchOut">
+                      <ui:ExcelReadCell.Result>
+                        <OutArgument x:TypeArguments="x:String">[CVname]</OutArgument>
+                      </ui:ExcelReadCell.Result>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:ExcelReadCell>
+                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_36" Text="[&quot;CVname = &quot;+CVname]" />
+                  </Sequence>
+                </ActivityAction>
+              </ui:ExcelApplicationScope.Body>
+            </ui:ExcelApplicationScope>
+            <bem:ExcelScope FilePassword="{x:Null}" ModifyPassword="{x:Null}" DisplayAlerts="False" DisplayName="Excel Scope - Need to install BalaReva.Easy.Excel.Activities Package" FilePath="[defaultPath+&quot;\&quot;+outputxlsxFile]" sap:VirtualizedContainerService.HintSize="647,814" sap2010:WorkflowViewState.IdRef="ExcelScope_1" UpdateAutoLinks="Default" Visible="False">
+              <bem:ExcelScope.Body>
+                <ActivityAction x:TypeArguments="bem:ExcelParam">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="bem:ExcelParam" Name="WorkBookObj" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="611,673" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If Condition="[CVname.Contains(&quot;.docx&quot;) or CVname.Contains(&quot;.DOCX&quot;)]" sap:VirtualizedContainerService.HintSize="569,217" sap2010:WorkflowViewState.IdRef="If_11">
+                      <If.Then>
+                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_37">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[foldername]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[URI_docx]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </If.Then>
+                      <If.Else>
+                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_38">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[foldername]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[URI_pdf]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </If.Else>
+                    </If>
+                    <Assign sap:VirtualizedContainerService.HintSize="569,60" sap2010:WorkflowViewState.IdRef="Assign_39">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[Hyperlink]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[defaultPath+"\"+foldername+"\"+CVname]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="569,61" sap2010:WorkflowViewState.IdRef="WriteLine_37" Text="[&quot;Hyper Link = &quot;+Hyperlink]" />
+                    <beh:InsertHyperlink Address="[Hyperlink]" Cell="[&quot;B&quot;+h.ToString]" ContinueOnError="False" Delay="1" DisplayName="Insert Hyperlink" DisplayText="[CVname]" DisplayTextOverwirte="False" ExecutionResult="[linkOK]" sap:VirtualizedContainerService.HintSize="569,22" sap2010:WorkflowViewState.IdRef="InsertHyperlink_1" SheetName="matchOut" />
+                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="569,61" sap2010:WorkflowViewState.IdRef="WriteLine_38" Text="[&quot;link ok = &quot;+linkOK.ToString]" />
+                  </Sequence>
+                </ActivityAction>
+              </bem:ExcelScope.Body>
+            </bem:ExcelScope>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="647,61" sap2010:WorkflowViewState.IdRef="WriteLine_39" Text="[&quot;h = &quot;+h.ToString]" />
+            <Assign sap:VirtualizedContainerService.HintSize="647,60" sap2010:WorkflowViewState.IdRef="Assign_40">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[h]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[h+1]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </ui:InterruptibleWhile.Body>
+      </ui:InterruptibleWhile>
+    </Sequence>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="1033,61" sap2010:WorkflowViewState.IdRef="WriteLine_21" Text="[&quot;User defined-keywords = &quot;+keyword]" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="1033,61" sap2010:WorkflowViewState.IdRef="WriteLine_20" Text="[&quot;match pattern = &quot;+pattern]" />
+  </Sequence>
+</Activity>

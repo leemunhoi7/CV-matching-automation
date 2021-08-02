@@ -1,0 +1,64 @@
+{
+  "name": "ReFramework_for_matchCV",
+  "description": "Match CVs with user-defined skill-sets
+MainCV - 23Jul2021 : Initial release by Lee Mun Hoi
+MainCV1 - 27Jul2021: 1. Allow user to enter any number of skill-set keywords from minimum 1 up to maximum of 7.
+                     2. Auto fetch CV files from 2 folders and auto detect docx and pdf file to execute accordingly. 
+MainCV2 - 29Jul2021: 1. Convert output file from csv to xlsx and then convert the first 10 best match CV names as hyperlink pointing the corresponding CV file.
+                     2. Install BalaReva.Easy.Excel.Activities Package on UiPath required to generate hyperlink on xlsx sheet.
+MainReFramework - 2Aug2021 : Transfer the program structure from sequential flow to REFramework.
+",
+  "main": "MainReFramework.xaml",
+  "dependencies": {
+    "BalaReva.EasyExcel.Activities": "[29.0.0]",
+    "CopyFromUiPath.Word.Activities": "[1.5.3]",
+    "UiPath.Excel.Activities": "[2.10.4]",
+    "UiPath.PDF.Activities": "[3.4.0]",
+    "UiPath.System.Activities": "[21.4.1]",
+    "UiPath.UIAutomation.Activities": "[21.4.4]"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "21.4.4.0",
+  "projectVersion": "1.0.0",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "isPausable": true,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [],
+    "modernBehavior": false
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "MainReFramework.xaml",
+      "uniqueId": "829b6d8f-3499-4014-b89f-a94cbd16d112",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Legacy"
+}
