@@ -11,11 +11,12 @@
     <x:Property Name="out_stremailmatchOut" Type="OutArgument(x:String)" />
     <x:Property Name="out_strphonematchOut" Type="OutArgument(x:String)" />
     <x:Property Name="out_strMatchKeyword" Type="OutArgument(x:String)" />
+    <x:Property Name="io_strStatus" Type="InOutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1029,5800</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>945,6138</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -51,7 +52,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="31">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="30">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -82,10 +83,9 @@
       <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
       <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Word</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1039,5735" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="955,6073" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strDoc1" />
       <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="matchOut" />
@@ -102,11 +102,11 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="997,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Start fetching CV index nbr i  = &quot;+io_TransactionNumber.ToString+&quot; for filename : &quot;+io_filename]" />
-    <ui:AppendLine DisplayName="Append Line" FileName="[in_Config(&quot;outputlogFile&quot;).ToString]" sap:VirtualizedContainerService.HintSize="997,132" sap2010:WorkflowViewState.IdRef="AppendLine_6" Text="[&quot;Start fetching CV index i = &quot;+io_TransactionNumber.ToString+&quot;, Original CV file name = &quot;+io_filename]" UseDefaultEncoding="False" />
-    <ClearCollection x:TypeArguments="x:String" Collection="[matchList]" DisplayName="Clear Collection" sap:VirtualizedContainerService.HintSize="997,22" sap2010:WorkflowViewState.IdRef="ClearCollection`1_1" />
-    <ClearCollection x:TypeArguments="x:String" Collection="[unqueMatchList]" DisplayName="Clear Collection" sap:VirtualizedContainerService.HintSize="997,22" sap2010:WorkflowViewState.IdRef="ClearCollection`1_2" />
-    <ui:MultipleAssign DisplayName="Multiple Assign " sap:VirtualizedContainerService.HintSize="997,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="913,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Start fetching CV index nbr i  = &quot;+io_TransactionNumber.ToString+&quot; for filename : &quot;+io_filename]" />
+    <ui:AppendLine DisplayName="Append Line" FileName="[in_Config(&quot;outputlogFile&quot;).ToString]" sap:VirtualizedContainerService.HintSize="913,132" sap2010:WorkflowViewState.IdRef="AppendLine_6" Text="[&quot;Start fetching CV index i = &quot;+io_TransactionNumber.ToString+&quot;, Original CV file name = &quot;+io_filename]" UseDefaultEncoding="False" />
+    <ClearCollection x:TypeArguments="x:String" Collection="[matchList]" DisplayName="Clear Collection" sap:VirtualizedContainerService.HintSize="913,22" sap2010:WorkflowViewState.IdRef="ClearCollection`1_1" />
+    <ClearCollection x:TypeArguments="x:String" Collection="[unqueMatchList]" DisplayName="Clear Collection" sap:VirtualizedContainerService.HintSize="913,22" sap2010:WorkflowViewState.IdRef="ClearCollection`1_2" />
+    <ui:MultipleAssign DisplayName="Multiple Assign " sap:VirtualizedContainerService.HintSize="913,160" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -125,12 +125,20 @@
               <InArgument x:TypeArguments="x:String" xml:space="preserve">  -</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[io_strStatus]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_Config("LogMessage_Success").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <If Condition="[io_filename.Contains(&quot;.docx&quot;) or io_filename.Contains(&quot;.DOCX&quot;)]" sap:VirtualizedContainerService.HintSize="997,569" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[io_filename.Contains(&quot;.docx&quot;) or io_filename.Contains(&quot;.DOCX&quot;)]" sap:VirtualizedContainerService.HintSize="913,876" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
-        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="514,411" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,718" sap2010:WorkflowViewState.IdRef="TryCatch_4">
           <TryCatch.Try>
             <Sequence sap:VirtualizedContainerService.HintSize="476,184" sap2010:WorkflowViewState.IdRef="Sequence_18">
               <sap:WorkflowViewStateService.ViewState>
@@ -142,10 +150,10 @@
             </Sequence>
           </TryCatch.Try>
           <TryCatch.Catches>
-            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="480,21" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,556" sap2010:WorkflowViewState.IdRef="Catch`1_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -171,7 +179,7 @@
                       </InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Throw Exception="[new BusinessRuleException(&quot;Business rule exception occured. The docx CV file &quot;+io_filename+&quot; is not readable and will be skipped !&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                  <Throw Exception="[new BusinessRuleException(&quot;The docx CV file &quot;+io_filename+&quot; is not readable and will be skipped !&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
                 </Sequence>
               </ActivityAction>
             </Catch>
@@ -179,15 +187,15 @@
         </TryCatch>
       </If.Then>
       <If.Else>
-        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,287" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,718" sap2010:WorkflowViewState.IdRef="TryCatch_2">
           <TryCatch.Try>
             <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text" FileName="[in_TransactionItem.ToString]" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ReadPDFText_1" Range="All" Text="[strDoc1]" />
           </TryCatch.Try>
           <TryCatch.Catches>
-            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,556" sap2010:WorkflowViewState.IdRef="Catch`1_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -213,7 +221,7 @@
                       </InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Throw Exception="[new BusinessRuleException(&quot;Business rule exception occured. The pdf CV file &quot;+io_filename+&quot; is not readable and will be skipped !&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                  <Throw Exception="[new BusinessRuleException(&quot;The pdf CV file &quot;+io_filename+&quot; is not readable and will be skipped !&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
                 </Sequence>
               </ActivityAction>
             </Catch>
@@ -221,7 +229,7 @@
         </TryCatch>
       </If.Else>
     </If>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="997,229" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="913,229" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_20">
           <sap:WorkflowViewStateService.ViewState>
@@ -233,8 +241,8 @@
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>
-    <ui:Matches DisplayName="Matches - key(0) to key(6) via pattern" sap:VirtualizedContainerService.HintSize="997,59" sap2010:WorkflowViewState.IdRef="Matches_1" Input="[strDoc1]" IsBuilderTabModified="False" Pattern="[in_pattern]" RegexOption="IgnoreCase, Compiled" Result="[matchOut]" />
-    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="[j]" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="997,248" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[matchOut]">
+    <ui:Matches DisplayName="Matches - key(0) to key(6) via pattern" sap:VirtualizedContainerService.HintSize="913,59" sap2010:WorkflowViewState.IdRef="Matches_1" Input="[strDoc1]" IsBuilderTabModified="False" Pattern="[in_pattern]" RegexOption="IgnoreCase, Compiled" Result="[matchOut]" />
+    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="[j]" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="913,248" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[matchOut]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -251,7 +259,7 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[k]" DisplayName="For Each  - this sequence is to remove duplicated keywords" sap:VirtualizedContainerService.HintSize="997,790" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[matchList]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[k]" DisplayName="For Each  - this sequence is to remove duplicated keywords" sap:VirtualizedContainerService.HintSize="913,790" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[matchList]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
@@ -281,7 +289,7 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <Assign sap:VirtualizedContainerService.HintSize="997,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+    <Assign sap:VirtualizedContainerService.HintSize="913,60" sap2010:WorkflowViewState.IdRef="Assign_11">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[out_strMatchKeyword]</OutArgument>
       </Assign.To>
@@ -289,7 +297,7 @@
         <InArgument x:TypeArguments="x:String">[string.join(" " , unqueMatchList)]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="997,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign sap:VirtualizedContainerService.HintSize="913,60" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[out_matchCount]</OutArgument>
       </Assign.To>
@@ -297,7 +305,7 @@
         <InArgument x:TypeArguments="x:Int32">[matchList.Count()]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Assign - count only unque matched keywords" sap:VirtualizedContainerService.HintSize="997,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <Assign DisplayName="Assign - count only unque matched keywords" sap:VirtualizedContainerService.HintSize="913,60" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[out_matchDistinctCount]</OutArgument>
       </Assign.To>
@@ -305,8 +313,8 @@
         <InArgument x:TypeArguments="x:Int32">[matchList.Distinct().Count()]</InArgument>
       </Assign.Value>
     </Assign>
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="997,64" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[&quot;matchCount = &quot;+out_matchCount.ToString+&quot;  j = &quot;+j.ToString+vbCrLf+&#xA;&quot;Unque match count = &quot;+out_matchDistinctCount.ToString]" />
-    <If Condition="[out_matchDistinctCount &gt;=in_QualifiedCount]" DisplayName="If - extract email address only if the CV at least  has 4 matched" sap:VirtualizedContainerService.HintSize="997,1673" sap2010:WorkflowViewState.IdRef="If_6">
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="913,64" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[&quot;matchCount = &quot;+out_matchCount.ToString+&quot;  j = &quot;+j.ToString+vbCrLf+&#xA;&quot;Unque match count = &quot;+out_matchDistinctCount.ToString]" />
+    <If Condition="[out_matchDistinctCount &gt;=in_QualifiedCount]" DisplayName="If - extract email address only if the CV at least  has 4 matched" sap:VirtualizedContainerService.HintSize="913,1673" sap2010:WorkflowViewState.IdRef="If_6">
       <If.Then>
         <Sequence sap:VirtualizedContainerService.HintSize="767,1496" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <sap:WorkflowViewStateService.ViewState>
@@ -400,7 +408,7 @@
         </Sequence>
       </If.Then>
     </If>
-    <Sequence DisplayName="Sequence - append to matchOut.csv " sap:VirtualizedContainerService.HintSize="997,597" sap2010:WorkflowViewState.IdRef="Sequence_21">
+    <Sequence DisplayName="Sequence - append to matchOut.csv " sap:VirtualizedContainerService.HintSize="913,597" sap2010:WorkflowViewState.IdRef="Sequence_21">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="strmatchOut" />
       </Sequence.Variables>
@@ -410,18 +418,18 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_14" Text="[&quot; Unque match keyword = &quot;+out_strMatchKeyword]" />
-      <ui:AppendLine DisplayName="Append Line" FileName="[in_Config(&quot;outputlogFile&quot;).ToString]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_9" Text="[&quot;For file name : &quot;+io_filename+&quot; , &quot;+&quot; match count = &quot;+out_matchCount.ToString+&quot; Unque match count = &quot;+out_matchDistinctCount.ToString+&quot; , &quot;+vbCrLf+&#xD;&#xA;&quot; Unque match keyword = &quot;+out_strMatchKeyword+&quot; Email = &quot;+out_stremailmatchOut+&quot; Phone = &quot;+out_strphonematchOut]" UseDefaultEncoding="False" />
+      <ui:AppendLine DisplayName="Append Line" FileName="[in_Config(&quot;outputlogFile&quot;).ToString]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_9" Text="[&quot;For file name : &quot;+io_filename+&quot; , &quot;+&quot; match count = &quot;+out_matchCount.ToString+&quot; Unque match count = &quot;+out_matchDistinctCount.ToString+&quot; , &quot;+vbCrLf+&#xA;&quot; Unque match keyword = &quot;+out_strMatchKeyword+&quot; Email = &quot;+out_stremailmatchOut+&quot; Phone = &quot;+out_strphonematchOut]" UseDefaultEncoding="False" />
       <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_12">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[strmatchOut]</OutArgument>
         </Assign.To>
         <Assign.Value>
-          <InArgument x:TypeArguments="x:String">[io_TransactionNumber.ToString+","+io_filename+","+out_matchDistinctCount.ToString+", ,"+out_stremailmatchOut+" ,"+out_strphonematchOut+","+out_strMatchKeyword]</InArgument>
+          <InArgument x:TypeArguments="x:String">[io_TransactionNumber.ToString+","+io_filename+","+out_matchDistinctCount.ToString+", ,"+out_stremailmatchOut+" ,"+out_strphonematchOut+","+out_strMatchKeyword+","+io_strStatus]</InArgument>
         </Assign.Value>
       </Assign>
       <ui:AppendLine DisplayName="Append Line" FileName="[in_Config(&quot;outputcsvFile&quot;).ToString]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_10" Text="[strmatchOut]" UseDefaultEncoding="False" />
     </Sequence>
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="997,61" sap2010:WorkflowViewState.IdRef="WriteLine_13" Text="[&quot;The transaction item for CV index nbr &quot;+io_TransactionNumber.ToString+&quot; is processed&quot;]" />
-    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="997,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="913,61" sap2010:WorkflowViewState.IdRef="WriteLine_13" Text="[&quot;The transaction item for CV index nbr &quot;+io_TransactionNumber.ToString+&quot; is processed&quot;]" />
+    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="913,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
   </Sequence>
 </Activity>
