@@ -1,9 +1,19 @@
 {
   "name": "ReFramework_for_matchCV",
-  "description": "Match CVs with user-defined skill-sets\r\nMainCV - 23Jul2021 : Initial release by Lee Mun Hoi\r\nMainCV1 - 27Jul2021: 1. Allow user to enter any number of skill-set keywords from minimum 1 up to maximum of 7.\r\n                     2. Auto fetch CV files from 2 folders and auto detect docx and pdf file to execute accordingly. \r\nMainCV2 - 29Jul2021: 1. Convert output file from csv to xlsx and then convert the first 10 best match CV names as hyperlink pointing the corresponding CV file.\r\n                     2. Install BalaReva.Easy.Excel.Activities Package on UiPath required to generate hyperlink on xlsx sheet.\r\nMainReFramework - 2Aug2021 : Convert the program structure from sequential flow to REFramework.\r\n",
+  "description": "Match CVs with user-defined skill-sets.
+Progrm history:
+MainCV - 23Jul2021 : Initial release by Lee Mun Hoi
+MainCV1- 27Jul2021: 1. Allow user to enter any number of skill-set keywords from minimum 1 up to maximum of 7.
+                    2. Auto fetch CV files from 2 folders and auto detect docx and pdf file to execute accordingly.
+MainCV2- 29Jul2021: 1. Convert output file from csv to xlsx and then convert the first 10 best match CV names with hyperlink pointing the corresponding CV file.
+                    2. Install BalaReva.Easy.Excel.Activities Package on UiPath required to generate hyperlink on xlsx sheet.
+MainReFramework - 2Aug2021 : 1.Convert the program structure from sequential flow to REFramework.
+                             2.Added sub-sequence:Email_Automation_for_Shortlisted_Candidates.xaml to automate sending email to shortlisted candidates.
+                - 15Aug2021: Install BalaReva.Excel.Activities Package to enable data visualization to automate the ploting of bar and pie charts",
   "main": "MainReFramework.xaml",
   "dependencies": {
     "BalaReva.EasyExcel.Activities": "[29.0.0]",
+    "BalaReva.Excel.Activities": "[2021.0.0]",
     "CopyFromUiPath.Word.Activities": "[1.5.3]",
     "UiPath.Excel.Activities": "[2.10.4]",
     "UiPath.Mail.Activities": "[1.11.0-preview]",
